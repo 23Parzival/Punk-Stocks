@@ -10,6 +10,9 @@ namespace Punk_Stocks.Models
         private string username = "";
         private string passwordHash = "";
         private decimal cashBalance;
+        private string theme = "light";
+        private string language = "en";
+        private DateTime createdAt = DateTime.Now;
 
         public int Id
         {
@@ -32,6 +35,24 @@ namespace Punk_Stocks.Models
         {
             get { return cashBalance; }
             set { cashBalance = value; }
+        }
+
+        public string Theme
+        {
+            get { return theme; }
+            set { theme = value; }
+        }
+
+        public string Language
+        {
+            get { return language; }
+            set { language = value; }
+        }
+
+        public DateTime CreatedAt
+        {
+            get { return createdAt; }
+            set { createdAt = value; }
         }
     }
 }
