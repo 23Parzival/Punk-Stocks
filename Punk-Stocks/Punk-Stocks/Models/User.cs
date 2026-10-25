@@ -10,8 +10,8 @@ namespace Punk_Stocks.Models
         private string username = "";
         private string passwordHash = "";
         private decimal cashBalance;
-        private string theme = "light";
-        private string language = "en";
+        private AppTheme theme = AppTheme.Light;
+        private AppLanguage language = AppLanguage.English;
         private DateTime createdAt = DateTime.Now;
 
         public int Id
@@ -37,13 +37,12 @@ namespace Punk_Stocks.Models
             set { cashBalance = value; }
         }
 
-        public string Theme
+        public AppTheme Theme
         {
             get { return theme; }
             set { theme = value; }
         }
-
-        public string Language
+        public AppLanguage Language
         {
             get { return language; }
             set { language = value; }
