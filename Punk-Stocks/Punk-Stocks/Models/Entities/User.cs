@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Punk_Stocks.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Punk_Stocks.Models
+namespace Punk_Stocks.Models.Entities
 {
     internal class User
     {

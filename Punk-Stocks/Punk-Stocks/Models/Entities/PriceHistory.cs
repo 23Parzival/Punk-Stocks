@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Punk_Stocks.Models
+namespace Punk_Stocks.Models.Entities
 {
     internal class PriceHistory
     {

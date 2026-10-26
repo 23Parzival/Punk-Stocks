@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Punk_Stocks.Models
+namespace Punk_Stocks.Models.Entities
 {
-    internal class Dividend
+    internal class WatchlistItem
     {
         private int id;
         private int userId;
         private int stockId;
-        private decimal amount;
-        private DateTime paidAt = DateTime.Now;
+        private DateTime addedAt = DateTime.Now;
         private Stock? stock;
 
         public int Id
@@ -28,15 +27,10 @@ namespace Punk_Stocks.Models
             get { return stockId; }
             set { stockId = value; }
         }
-        public decimal Amount
+        public DateTime AddedAt
         {
-            get { return amount; }
-            set { amount = value; }
-        }
-        public DateTime PaidAt
-        {
-            get { return paidAt; }
-            set { paidAt = value; }
+            get { return addedAt; }
+            set { addedAt = value; }
         }
         public Stock? Stock
         {

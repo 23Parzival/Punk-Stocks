@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Punk_Stocks.Models
+namespace Punk_Stocks.Models.Entities
 {
-    internal class Transaction
+    internal class Holding
     {
         private int id;
         private int userId;
         private int stockId;
-        private TransactionType type;
         private int quantity;
-        private decimal pricePerShare;
-        private DateTime executedAt = DateTime.Now;
+        private decimal avgCost;
         private Stock? stock;
 
         public int Id
@@ -30,34 +28,39 @@ namespace Punk_Stocks.Models
             get { return stockId; }
             set { stockId = value; }
         }
-        public TransactionType Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
         public int Quantity
         {
             get { return quantity; }
             set { quantity = value; }
         }
-        public decimal PricePerShare
+        public decimal AvgCost
         {
-            get { return pricePerShare; }
-            set { pricePerShare = value; }
-        }
-        public DateTime ExecutedAt
-        {
-            get { return executedAt; }
-            set { executedAt = value; }
+            get { return avgCost; }
+            set { avgCost = value; }
         }
         public Stock? Stock
         {
             get { return stock; }
             set { stock = value; }
         }
-        public decimal Total
+        public decimal CurrentValue
         {
-            get { return quantity * pricePerShare; }
+            get { return stock == null ? 0m : Quantity * stock.CurrentPrice; }
+        }
+        //total amount you paid for the shares you currently hold
+        public decimal CostBasis
+        {
+            get { return Quantity * AvgCost; }
+        }
+        //difference between what your shares are worth now and what you paid for them
+        public decimal GainLoss
+        {
+            get { return CurrentValue - CostBasis; }
+        }
+        //percentage of prev
+        public decimal GainLossPercent
+        {
+            get { return CostBasis == 0m ? 0m : GainLoss / CostBasis; }
         }
     }
 }
