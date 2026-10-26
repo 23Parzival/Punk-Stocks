@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Punk_Stocks.Data
 {
-    internal class Database
+    internal static class Database
     {
         private static readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Punk-Stocks", "punkstocks.db");
 
