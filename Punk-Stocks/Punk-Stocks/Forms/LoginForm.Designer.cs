@@ -37,7 +37,7 @@
             ClientSize = new Size(800, 461);
             MinimumSize = new Size(600, 500);
             Name = "LoginForm";
-            Text = "Login";
+            Text = "Punk-Stocks Login";
             ResumeLayout(false);
         }
 
