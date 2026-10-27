@@ -14,6 +14,7 @@ namespace Punk_Stocks.Models.Entities
         private AppTheme theme = AppTheme.Light;
         private AppLanguage language = AppLanguage.English;
         private DateTime createdAt = DateTime.Now;
+        private bool isAdmin;
 
         public int Id
         {
@@ -53,6 +54,12 @@ namespace Punk_Stocks.Models.Entities
         {
             get { return createdAt; }
             set { createdAt = value; }
+        }
+
+        public bool IsAdmin
+        {
+            get { return isAdmin; }
+            set { isAdmin = value; }
         }
     }
 }
