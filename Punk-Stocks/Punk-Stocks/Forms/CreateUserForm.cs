@@ -19,7 +19,7 @@ namespace Punk_Stocks.Forms
         private void createAccountButton_Click(object sender, EventArgs e)
         {
             ValidateChildren();
-            if (validationErrorProvider.HasErrors)
+            if (HasValidationErrors())
                 return;
         }
 
@@ -54,6 +54,16 @@ namespace Punk_Stocks.Forms
                 validationErrorProvider.SetError(passwordConfirmTextBox, "Passwords do not match.");
             else
                 validationErrorProvider.SetError(passwordConfirmTextBox, "");
+        }
+
+        private bool HasValidationErrors()
+        {
+            foreach (Control control in Controls)
+            {
+                if (validationErrorProvider.GetError(control) != "")
+                    return true;
+            }
+            return false;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Punk_Stocks.Forms
+﻿using System.Drawing;
+using System.Windows.Forms;
+namespace Punk_Stocks.Forms
 {
     partial class CreateUserForm
     {
@@ -176,7 +178,7 @@
             // 
             // CreateUserForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             ClientSize = new Size(476, 335);

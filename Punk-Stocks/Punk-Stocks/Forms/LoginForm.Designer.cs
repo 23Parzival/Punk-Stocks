@@ -1,4 +1,7 @@
-﻿namespace Punk_Stocks
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Punk_Stocks.Forms
 {
     partial class LoginForm
     {
@@ -121,7 +124,7 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(476, 271);
             Controls.Add(usernameTextBox);

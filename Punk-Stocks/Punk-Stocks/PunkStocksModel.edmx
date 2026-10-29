@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PunkStocksDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alerts">
+          <Key>
+            <PropertyRef Name="AlertID" />
+          </Key>
+          <Property Name="AlertID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StockID" Type="int" Nullable="false" />
+          <Property Name="TargetPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Direction" Type="int" Nullable="false" />
+          <Property Name="IsTriggered" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dividends">
+          <Key>
+            <PropertyRef Name="DividendID" />
+          </Key>
+          <Property Name="DividendID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StockID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PaidAt" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Holdings">
+          <Key>
+            <PropertyRef Name="HoldingID" />
+          </Key>
+          <Property Name="HoldingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StockID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="AvgCost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PriceHistories">
+          <Key>
+            <PropertyRef Name="PriceHistoryID" />
+          </Key>
+          <Property Name="PriceHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StockID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordedAt" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stocks">
+          <Key>
+            <PropertyRef Name="StockID" />
+          </Key>
+          <Property Name="StockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Symbol" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CurrentPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Volatility" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="DividendYield" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StockID" Type="int" Nullable="false" />
+          <Property Name="TransactionType" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="PricePerShare" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ExecutedAt" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CashBalance" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Theme" Type="int" Nullable="false" />
+          <Property Name="Language" Type="int" Nullable="false" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WatchlistItems">
+          <Key>
+            <PropertyRef Name="WatchlistItemID" />
+          </Key>
+          <Property Name="WatchlistItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StockID" Type="int" Nullable="false" />
+          <Property Name="AddedAt" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Alerts__StockID__7D439ABD">
+          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="Alerts" Type="Self.Alerts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Alerts">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Alerts__UserID__7C4F7684">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Alerts" Type="Self.Alerts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Alerts">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dividends__Stock__06CD04F7">
+          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="Dividends" Type="Self.Dividends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Dividends">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dividends__UserI__05D8E0BE">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dividends" Type="Self.Dividends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Dividends">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Holdings__StockI__6C190EBB">
+          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="Holdings" Type="Self.Holdings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Holdings">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Holdings__UserID__6B24EA82">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Holdings" Type="Self.Holdings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Holdings">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PriceHist__Stock__02084FDA">
+          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="PriceHistories" Type="Self.PriceHistories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="PriceHistories">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Stock__70DDC3D8">
+          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__UserI__6FE99F9F">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Watchlist__Stock__787EE5A0">
+          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="WatchlistItems" Type="Self.WatchlistItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="WatchlistItems">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Watchlist__UserI__778AC167">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WatchlistItems" Type="Self.WatchlistItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WatchlistItems">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PunkStocksDBModelStoreContainer">
+          <EntitySet Name="Alerts" EntityType="Self.Alerts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dividends" EntityType="Self.Dividends" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Holdings" EntityType="Self.Holdings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PriceHistories" EntityType="Self.PriceHistories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stocks" EntityType="Self.Stocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WatchlistItems" EntityType="Self.WatchlistItems" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Alerts__StockID__7D439ABD" Association="Self.FK__Alerts__StockID__7D439ABD">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Alerts" EntitySet="Alerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Alerts__UserID__7C4F7684" Association="Self.FK__Alerts__UserID__7C4F7684">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Alerts" EntitySet="Alerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dividends__Stock__06CD04F7" Association="Self.FK__Dividends__Stock__06CD04F7">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Dividends" EntitySet="Dividends" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dividends__UserI__05D8E0BE" Association="Self.FK__Dividends__UserI__05D8E0BE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Dividends" EntitySet="Dividends" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Holdings__StockI__6C190EBB" Association="Self.FK__Holdings__StockI__6C190EBB">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Holdings" EntitySet="Holdings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Holdings__UserID__6B24EA82" Association="Self.FK__Holdings__UserID__6B24EA82">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Holdings" EntitySet="Holdings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PriceHist__Stock__02084FDA" Association="Self.FK__PriceHist__Stock__02084FDA">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="PriceHistories" EntitySet="PriceHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Stock__70DDC3D8" Association="Self.FK__Transacti__Stock__70DDC3D8">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__UserI__6FE99F9F" Association="Self.FK__Transacti__UserI__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Watchlist__Stock__787EE5A0" Association="Self.FK__Watchlist__Stock__787EE5A0">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="WatchlistItems" EntitySet="WatchlistItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Watchlist__UserI__778AC167" Association="Self.FK__Watchlist__UserI__778AC167">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WatchlistItems" EntitySet="WatchlistItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PunkStocksDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alert">
+          <Key>
+            <PropertyRef Name="AlertID" />
+          </Key>
+          <Property Name="AlertID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StockID" Type="Int32" Nullable="false" />
+          <Property Name="TargetPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Direction" Type="Int32" Nullable="false" />
+          <Property Name="IsTriggered" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK__Alerts__StockID__7D439ABD" FromRole="Alerts" ToRole="Stocks" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Alerts__UserID__7C4F7684" FromRole="Alerts" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Dividend">
+          <Key>
+            <PropertyRef Name="DividendID" />
+          </Key>
+          <Property Name="DividendID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StockID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PaidAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK__Dividends__Stock__06CD04F7" FromRole="Dividends" ToRole="Stocks" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Dividends__UserI__05D8E0BE" FromRole="Dividends" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Holding">
+          <Key>
+            <PropertyRef Name="HoldingID" />
+          </Key>
+          <Property Name="HoldingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StockID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="AvgCost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK__Holdings__StockI__6C190EBB" FromRole="Holdings" ToRole="Stocks" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Holdings__UserID__6B24EA82" FromRole="Holdings" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="PriceHistory">
+          <Key>
+            <PropertyRef Name="PriceHistoryID" />
+          </Key>
+          <Property Name="PriceHistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StockID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RecordedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK__PriceHist__Stock__02084FDA" FromRole="PriceHistories" ToRole="Stocks" />
+        </EntityType>
+        <EntityType Name="Stock">
+          <Key>
+            <PropertyRef Name="StockID" />
+          </Key>
+          <Property Name="StockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurrentPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Volatility" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="DividendYield" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Alerts" Relationship="Self.FK__Alerts__StockID__7D439ABD" FromRole="Stocks" ToRole="Alerts" />
+          <NavigationProperty Name="Dividends" Relationship="Self.FK__Dividends__Stock__06CD04F7" FromRole="Stocks" ToRole="Dividends" />
+          <NavigationProperty Name="Holdings" Relationship="Self.FK__Holdings__StockI__6C190EBB" FromRole="Stocks" ToRole="Holdings" />
+          <NavigationProperty Name="PriceHistories" Relationship="Self.FK__PriceHist__Stock__02084FDA" FromRole="Stocks" ToRole="PriceHistories" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK__Transacti__Stock__70DDC3D8" FromRole="Stocks" ToRole="Transactions" />
+          <NavigationProperty Name="WatchlistItems" Relationship="Self.FK__Watchlist__Stock__787EE5A0" FromRole="Stocks" ToRole="WatchlistItems" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StockID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionType" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="PricePerShare" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ExecutedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK__Transacti__Stock__70DDC3D8" FromRole="Transactions" ToRole="Stocks" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Transacti__UserI__6FE99F9F" FromRole="Transactions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CashBalance" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Theme" Type="Int32" Nullable="false" />
+          <Property Name="Language" Type="Int32" Nullable="false" />
+          <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Alerts" Relationship="Self.FK__Alerts__UserID__7C4F7684" FromRole="Users" ToRole="Alerts" />
+          <NavigationProperty Name="Dividends" Relationship="Self.FK__Dividends__UserI__05D8E0BE" FromRole="Users" ToRole="Dividends" />
+          <NavigationProperty Name="Holdings" Relationship="Self.FK__Holdings__UserID__6B24EA82" FromRole="Users" ToRole="Holdings" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK__Transacti__UserI__6FE99F9F" FromRole="Users" ToRole="Transactions" />
+          <NavigationProperty Name="WatchlistItems" Relationship="Self.FK__Watchlist__UserI__778AC167" FromRole="Users" ToRole="WatchlistItems" />
+        </EntityType>
+        <EntityType Name="WatchlistItem">
+          <Key>
+            <PropertyRef Name="WatchlistItemID" />
+          </Key>
+          <Property Name="WatchlistItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StockID" Type="Int32" Nullable="false" />
+          <Property Name="AddedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Stock" Relationship="Self.FK__Watchlist__Stock__787EE5A0" FromRole="WatchlistItems" ToRole="Stocks" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Watchlist__UserI__778AC167" FromRole="WatchlistItems" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__Alerts__StockID__7D439ABD">
+          <End Role="Stocks" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Alerts" Type="Self.Alert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Alerts">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Alerts__UserID__7C4F7684">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Alerts" Type="Self.Alert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Alerts">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dividends__Stock__06CD04F7">
+          <End Role="Stocks" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Dividends" Type="Self.Dividend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Dividends">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dividends__UserI__05D8E0BE">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dividends" Type="Self.Dividend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Dividends">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Holdings__StockI__6C190EBB">
+          <End Role="Stocks" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Holdings" Type="Self.Holding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Holdings">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Holdings__UserID__6B24EA82">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Holdings" Type="Self.Holding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Holdings">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PriceHist__Stock__02084FDA">
+          <End Role="Stocks" Type="Self.Stock" Multiplicity="1" />
+          <End Role="PriceHistories" Type="Self.PriceHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="PriceHistories">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Stock__70DDC3D8">
+          <End Role="Stocks" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Watchlist__Stock__787EE5A0">
+          <End Role="Stocks" Type="Self.Stock" Multiplicity="1" />
+          <End Role="WatchlistItems" Type="Self.WatchlistItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stocks">
+              <PropertyRef Name="StockID" />
+            </Principal>
+            <Dependent Role="WatchlistItems">
+              <PropertyRef Name="StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__UserI__6FE99F9F">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Watchlist__UserI__778AC167">
+          <End Role="Users" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WatchlistItems" Type="Self.WatchlistItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WatchlistItems">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PunkStocksDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alerts" EntityType="Self.Alert" />
+          <EntitySet Name="Dividends" EntityType="Self.Dividend" />
+          <EntitySet Name="Holdings" EntityType="Self.Holding" />
+          <EntitySet Name="PriceHistories" EntityType="Self.PriceHistory" />
+          <EntitySet Name="Stocks" EntityType="Self.Stock" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="WatchlistItems" EntityType="Self.WatchlistItem" />
+          <AssociationSet Name="FK__Alerts__StockID__7D439ABD" Association="Self.FK__Alerts__StockID__7D439ABD">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Alerts" EntitySet="Alerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Alerts__UserID__7C4F7684" Association="Self.FK__Alerts__UserID__7C4F7684">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Alerts" EntitySet="Alerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dividends__Stock__06CD04F7" Association="Self.FK__Dividends__Stock__06CD04F7">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Dividends" EntitySet="Dividends" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dividends__UserI__05D8E0BE" Association="Self.FK__Dividends__UserI__05D8E0BE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Dividends" EntitySet="Dividends" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Holdings__StockI__6C190EBB" Association="Self.FK__Holdings__StockI__6C190EBB">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Holdings" EntitySet="Holdings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Holdings__UserID__6B24EA82" Association="Self.FK__Holdings__UserID__6B24EA82">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Holdings" EntitySet="Holdings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PriceHist__Stock__02084FDA" Association="Self.FK__PriceHist__Stock__02084FDA">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="PriceHistories" EntitySet="PriceHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Stock__70DDC3D8" Association="Self.FK__Transacti__Stock__70DDC3D8">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Watchlist__Stock__787EE5A0" Association="Self.FK__Watchlist__Stock__787EE5A0">
+            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="WatchlistItems" EntitySet="WatchlistItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__UserI__6FE99F9F" Association="Self.FK__Transacti__UserI__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Watchlist__UserI__778AC167" Association="Self.FK__Watchlist__UserI__778AC167">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WatchlistItems" EntitySet="WatchlistItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PunkStocksDBModelStoreContainer" CdmEntityContainer="PunkStocksDBEntities">
+          <EntitySetMapping Name="Alerts">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.Alert">
+              <MappingFragment StoreEntitySet="Alerts">
+                <ScalarProperty Name="AlertID" ColumnName="AlertID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="TargetPrice" ColumnName="TargetPrice" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="IsTriggered" ColumnName="IsTriggered" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dividends">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.Dividend">
+              <MappingFragment StoreEntitySet="Dividends">
+                <ScalarProperty Name="DividendID" ColumnName="DividendID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaidAt" ColumnName="PaidAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Holdings">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.Holding">
+              <MappingFragment StoreEntitySet="Holdings">
+                <ScalarProperty Name="HoldingID" ColumnName="HoldingID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="AvgCost" ColumnName="AvgCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceHistories">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.PriceHistory">
+              <MappingFragment StoreEntitySet="PriceHistories">
+                <ScalarProperty Name="PriceHistoryID" ColumnName="PriceHistoryID" />
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="RecordedAt" ColumnName="RecordedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stocks">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.Stock">
+              <MappingFragment StoreEntitySet="Stocks">
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="CurrentPrice" ColumnName="CurrentPrice" />
+                <ScalarProperty Name="Volatility" ColumnName="Volatility" />
+                <ScalarProperty Name="DividendYield" ColumnName="DividendYield" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="PricePerShare" ColumnName="PricePerShare" />
+                <ScalarProperty Name="ExecutedAt" ColumnName="ExecutedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="CashBalance" ColumnName="CashBalance" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WatchlistItems">
+            <EntityTypeMapping TypeName="PunkStocksDBModel.WatchlistItem">
+              <MappingFragment StoreEntitySet="WatchlistItems">
+                <ScalarProperty Name="WatchlistItemID" ColumnName="WatchlistItemID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="AddedAt" ColumnName="AddedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

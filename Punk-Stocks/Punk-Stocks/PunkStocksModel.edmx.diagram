@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="03d0f277a4084949afd9fdc846c4943e" Name="Diagram1">
+        <EntityTypeShape EntityType="PunkStocksDBModel.Alert" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.Dividend" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.Holding" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.PriceHistory" Width="1.5" PointX="3" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.Stock" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.Transaction" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.User" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PunkStocksDBModel.WatchlistItem" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Alerts__StockID__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Alerts__UserID__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Dividends__Stock__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Dividends__UserI__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Holdings__StockI__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Holdings__UserID__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__PriceHist__Stock__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Transacti__Stock__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Watchlist__Stock__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Transacti__UserI__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="PunkStocksDBModel.FK__Watchlist__UserI__778AC167" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

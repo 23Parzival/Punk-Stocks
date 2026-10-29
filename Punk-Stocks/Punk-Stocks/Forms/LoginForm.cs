@@ -1,6 +1,8 @@
 using Punk_Stocks.Forms;
+using System;
+using System.Windows.Forms;
 
-namespace Punk_Stocks
+namespace Punk_Stocks.Forms
 {
     public partial class LoginForm : Form
     {
