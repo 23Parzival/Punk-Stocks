@@ -1,169 +1,172 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0" version="29.5.1">
+<mxfile host="Electron">
   <diagram name="Page-1" id="4UuIJItJBllCgB6k1wZT">
-    <mxGraphModel dx="1722" dy="925" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0" adaptiveColors="auto">
+    <mxGraphModel dx="2054" dy="1201" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;" value="&lt;div&gt;Punk-Stocks Database Schema&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;" value="Punk-Stocks Database Schema" vertex="1">
           <mxGeometry height="30" width="305" x="347.5" y="11" as="geometry" />
         </mxCell>
         <mxCell id="t_users" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Users" vertex="1">
-          <mxGeometry height="208" width="200" x="400" y="60" as="geometry" />
+          <mxGeometry height="234" width="200" x="400" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="u_id" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="u_id" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="u_name" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="username" vertex="1">
+        <mxCell id="u_name" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Username" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="u_hash" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="password_hash" vertex="1">
+        <mxCell id="u_hash" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PasswordHash" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="u_cash" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="cash_balance" vertex="1">
+        <mxCell id="u_cash" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="CashBalance" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
-        <mxCell id="u_theme" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="theme" vertex="1">
+        <mxCell id="u_theme" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Theme" vertex="1">
           <mxGeometry height="26" width="200" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="u_lang" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="language" vertex="1">
+        <mxCell id="u_lang" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Language" vertex="1">
           <mxGeometry height="26" width="200" y="156" as="geometry" />
         </mxCell>
-        <mxCell id="u_created" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="created_at" vertex="1">
+        <mxCell id="u_admin" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="IsAdmin" vertex="1">
           <mxGeometry height="26" width="200" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="u_created" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="CreatedAt" vertex="1">
+          <mxGeometry height="26" width="200" y="208" as="geometry" />
         </mxCell>
         <mxCell id="t_stocks" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Stocks" vertex="1">
           <mxGeometry height="208" width="200" x="400" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="s_id" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="s_id" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="s_symbol" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="symbol" vertex="1">
+        <mxCell id="s_symbol" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Symbol" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="s_name" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="company_name" vertex="1">
+        <mxCell id="s_name" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="CompanyName" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="s_sector" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="sector" vertex="1">
+        <mxCell id="s_sector" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Sector" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
-        <mxCell id="s_price" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="current_price" vertex="1">
+        <mxCell id="s_price" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="CurrentPrice" vertex="1">
           <mxGeometry height="26" width="200" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="s_vol" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="volatility" vertex="1">
+        <mxCell id="s_vol" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Volatility" vertex="1">
           <mxGeometry height="26" width="200" y="156" as="geometry" />
         </mxCell>
-        <mxCell id="s_div" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="dividend_yield" vertex="1">
+        <mxCell id="s_div" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="DividendYield" vertex="1">
           <mxGeometry height="26" width="200" y="182" as="geometry" />
         </mxCell>
         <mxCell id="t_hold" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Holdings" vertex="1">
           <mxGeometry height="156" width="200" x="40" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="h_id" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="h_id" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK HoldingID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="h_user" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK user_id" vertex="1">
+        <mxCell id="h_user" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="h_stock" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK stock_id" vertex="1">
+        <mxCell id="h_stock" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="h_qty" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="quantity" vertex="1">
+        <mxCell id="h_qty" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Quantity" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
-        <mxCell id="h_avg" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="avg_cost" vertex="1">
+        <mxCell id="h_avg" parent="t_hold" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="AvgCost" vertex="1">
           <mxGeometry height="26" width="200" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="t_watch" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Watchlist" vertex="1">
+        <mxCell id="t_watch" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="WatchlistItems" vertex="1">
           <mxGeometry height="130" width="200" x="760" y="54" as="geometry" />
         </mxCell>
-        <mxCell id="w_id" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="w_id" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK WatchlistItemID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="w_user" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK user_id" vertex="1">
+        <mxCell id="w_user" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="w_stock" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK stock_id" vertex="1">
+        <mxCell id="w_stock" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="w_added" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="added_at" vertex="1">
+        <mxCell id="w_added" parent="t_watch" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="AddedAt" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
         <mxCell id="t_trans" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Transactions" vertex="1">
           <mxGeometry height="208" width="200" x="65" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="t_id" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="t_id" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK TransactionID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="t_user" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK user_id" vertex="1">
+        <mxCell id="t_user" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="t_stock" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK stock_id" vertex="1">
+        <mxCell id="t_stock" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="t_type" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="type (BUY / SELL)" vertex="1">
+        <mxCell id="t_type" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="TransactionType" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
-        <mxCell id="t_qty" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="quantity" vertex="1">
+        <mxCell id="t_qty" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Quantity" vertex="1">
           <mxGeometry height="26" width="200" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="t_price" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="price_per_share" vertex="1">
+        <mxCell id="t_price" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PricePerShare" vertex="1">
           <mxGeometry height="26" width="200" y="156" as="geometry" />
         </mxCell>
-        <mxCell id="t_time" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="executed_at" vertex="1">
+        <mxCell id="t_time" parent="t_trans" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="ExecutedAt" vertex="1">
           <mxGeometry height="26" width="200" y="182" as="geometry" />
         </mxCell>
         <mxCell id="t_alert" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Alerts" vertex="1">
           <mxGeometry height="182" width="200" x="760" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="a_id" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="a_id" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK AlertID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="a_user" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK user_id" vertex="1">
+        <mxCell id="a_user" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="a_stock" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK stock_id" vertex="1">
+        <mxCell id="a_stock" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="a_target" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="target_price" vertex="1">
+        <mxCell id="a_target" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="TargetPrice" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
-        <mxCell id="a_dir" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="direction (ABOVE / BELOW)" vertex="1">
+        <mxCell id="a_dir" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Direction" vertex="1">
           <mxGeometry height="26" width="200" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="a_trig" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="is_triggered" vertex="1">
+        <mxCell id="a_trig" parent="t_alert" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="IsTriggered" vertex="1">
           <mxGeometry height="26" width="200" y="156" as="geometry" />
         </mxCell>
-        <mxCell id="t_price_hist" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="PriceHistory" vertex="1">
+        <mxCell id="t_price_hist" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="PriceHistories" vertex="1">
           <mxGeometry height="130" width="200" x="388" y="620" as="geometry" />
         </mxCell>
-        <mxCell id="p_id" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="p_id" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK PriceHistoryID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="p_stock" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK stock_id" vertex="1">
+        <mxCell id="p_stock" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="p_price" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="price" vertex="1">
+        <mxCell id="p_price" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Price" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="p_time" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="recorded_at" vertex="1">
+        <mxCell id="p_time" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="RecordedAt" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
         <mxCell id="t_div" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Dividends" vertex="1">
           <mxGeometry height="156" width="200" x="760" y="620" as="geometry" />
         </mxCell>
-        <mxCell id="d_id" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK id" vertex="1">
+        <mxCell id="d_id" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK DividendID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
         </mxCell>
-        <mxCell id="d_user" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK user_id" vertex="1">
+        <mxCell id="d_user" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="d_stock" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK stock_id" vertex="1">
+        <mxCell id="d_stock" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="FK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="d_amount" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="amount" vertex="1">
+        <mxCell id="d_amount" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Amount" vertex="1">
           <mxGeometry height="26" width="200" y="104" as="geometry" />
         </mxCell>
-        <mxCell id="d_paid" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="paid_at" vertex="1">
+        <mxCell id="d_paid" parent="t_div" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PaidAt" vertex="1">
           <mxGeometry height="26" width="200" y="130" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="h_user" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="u_id">
