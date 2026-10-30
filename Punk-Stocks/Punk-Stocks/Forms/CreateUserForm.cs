@@ -12,6 +12,8 @@ namespace Punk_Stocks.Forms
 {
     public partial class CreateUserForm : Form
     {
+        private readonly AuthService authService = new AuthService();
+
         //so that the username can be accessed from the login form after the user is created
         public string CreatedUsername { get; private set; }
 
@@ -20,7 +22,7 @@ namespace Punk_Stocks.Forms
             InitializeComponent();
         }
 
-        private void createAccountButton_Click(object sender, EventArgs e)
+        private async void createAccountButton_Click(object sender, EventArgs e)
         {
             ValidateChildren();
             if (HasValidationErrors())
@@ -31,8 +33,25 @@ namespace Punk_Stocks.Forms
             decimal startingCash = Math.Round(decimal.Parse(cashBalanceTextBox.Text), 2);
 
             SetBusy(true);
+            AuthResult result;
+            try
+            {
+                result = await Task.Run(() => authService.Register(username, password, startingCash));
+            }
+            catch (Exception ex)
+            {
+                SetBusy(false);
+                MessageBox.Show("Could not create the account:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SetBusy(false);
 
-            //authentication
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Error, "Account not created", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                usernameTextBox.Focus();
+                return;
+            }
 
             MessageBox.Show("Account created! You can now log in.", "Welcome to Punk-Stocks", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CreatedUsername = username;

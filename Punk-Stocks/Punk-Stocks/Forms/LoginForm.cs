@@ -1,27 +1,47 @@
 using Punk_Stocks.Services;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Punk_Stocks.Forms
 {
     public partial class LoginForm : Form
     {
+        private readonly AuthService authService = new AuthService();
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private async void loginButton_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text;
             string passwd = passwordTextBox.Text;
 
             SetBusy(true);
+            AuthResult result;
+            try
+            {
+                result = await Task.Run(() => authService.Login(username, passwd));
+            }
+            catch (Exception ex)
+            {
+                SetBusy(false);
+                MessageBox.Show("Could not log in:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SetBusy(false);
 
-            //authentication
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Error, "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                passwordTextBox.Clear();
+                passwordTextBox.Focus();
+                return;
+            }
 
             passwordTextBox.Clear();
-            //SessionManager.SignIn(User); -> will sign in the user if authentication is successful
+            SessionManager.SignIn(result.User);
             OpenMainForm();
         }
 
