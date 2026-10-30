@@ -9,15 +9,21 @@ namespace Punk_Stocks.Services
     {
         public static string ValidateUsername(string username)
         {
-            if (username.Trim().Length < 4)
+            username = (username ?? "").Trim();
+            if (username.Length < 4)
                 return "Username must be at least 4 characters.";
+            else if (username.Length > 50)
+                return "Username cannot exceed 50 characters.";
             return null;
         }
 
         public static string ValidatePassword(string password)
         {
+            password = password ?? "";
             if (password.Length < 8)
                 return "Password must be at least 8 characters.";
+            if (password.Length > 128)
+                return "Password cannot exceed 128 characters.";
             if (!password.Any(char.IsUpper) || !password.Any(char.IsLower) || !password.Any(char.IsDigit))
                 return "Include an uppercase letter, a lowercase letter and a number.";
             return null;

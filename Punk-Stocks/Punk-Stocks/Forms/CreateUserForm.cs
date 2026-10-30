@@ -5,12 +5,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Punk_Stocks.Forms
 {
     public partial class CreateUserForm : Form
     {
+        //so that the username can be accessed from the login form after the user is created
+        public string CreatedUsername { get; private set; }
+
         public CreateUserForm()
         {
             InitializeComponent();
@@ -21,6 +25,26 @@ namespace Punk_Stocks.Forms
             ValidateChildren();
             if (HasValidationErrors())
                 return;
+
+            string username = usernameTextBox.Text.Trim();
+            string password = passwordTextBox.Text;
+            decimal startingCash = Math.Round(decimal.Parse(cashBalanceTextBox.Text), 2);
+
+            SetBusy(true);
+
+            //authentication
+
+            MessageBox.Show("Account created! You can now log in.", "Welcome to Punk-Stocks", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CreatedUsername = username;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void SetBusy(bool busy)
+        {
+            createAccountButton.Enabled = !busy;
+            backButton.Enabled = !busy;
+            loginLinkLabel.Enabled = !busy;
+            UseWaitCursor = busy;
         }
 
         private void backButton_Click(object sender, EventArgs e)
