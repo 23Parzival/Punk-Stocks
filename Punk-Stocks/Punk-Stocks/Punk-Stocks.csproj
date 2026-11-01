@@ -107,6 +107,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Holding.cs">
       <DependentUpon>PunkStocksModel.tt</DependentUpon>
     </Compile>
@@ -134,6 +140,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PunkStocksModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Services\AuthResult.cs" />
+    <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\ValidationService.cs" />
     <Compile Include="Stock.cs">
       <DependentUpon>PunkStocksModel.tt</DependentUpon>
@@ -185,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Entities\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
