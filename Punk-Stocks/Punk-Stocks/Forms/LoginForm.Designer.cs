@@ -78,6 +78,7 @@ namespace Punk_Stocks.Forms
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Log In";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // exitButton
             // 
@@ -89,6 +90,7 @@ namespace Punk_Stocks.Forms
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // createUserLinkLabel
             // 
@@ -100,6 +102,7 @@ namespace Punk_Stocks.Forms
             this.createUserLinkLabel.TabIndex = 5;
             this.createUserLinkLabel.TabStop = true;
             this.createUserLinkLabel.Text = "Not a user? Click here to create an account.";
+            this.createUserLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createUserLinkLabel_LinkClicked);
             // 
             // passwordTextBox
             // 

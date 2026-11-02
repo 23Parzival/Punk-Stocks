@@ -45,9 +45,7 @@ namespace Punk_Stocks.Services
 
             User user = users.GetByUsername(username);
 
-            bool passwordOk = BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
-
-            if (user == null || !passwordOk)
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 return AuthResult.Fail("Invalid username or password.");
 
             return AuthResult.Ok(user);

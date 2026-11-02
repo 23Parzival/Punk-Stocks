@@ -66,6 +66,7 @@ namespace Punk_Stocks.Forms
             this.passwordTextBox.Size = new System.Drawing.Size(148, 20);
             this.passwordTextBox.TabIndex = 14;
             this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.passwordTextBox_Validating);
             // 
             // passwordConfirmTextBox
             // 
@@ -76,6 +77,7 @@ namespace Punk_Stocks.Forms
             this.passwordConfirmTextBox.Size = new System.Drawing.Size(148, 20);
             this.passwordConfirmTextBox.TabIndex = 13;
             this.passwordConfirmTextBox.UseSystemPasswordChar = true;
+            this.passwordConfirmTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.passwordConfirmTextBox_Validating);
             // 
             // loginLinkLabel
             // 
@@ -88,6 +90,7 @@ namespace Punk_Stocks.Forms
             this.loginLinkLabel.TabIndex = 12;
             this.loginLinkLabel.TabStop = true;
             this.loginLinkLabel.Text = "Already a user? Click here to login.";
+            this.loginLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loginLinkLabel_LinkClicked);
             // 
             // backButton
             // 
@@ -100,6 +103,7 @@ namespace Punk_Stocks.Forms
             this.backButton.TabIndex = 11;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // createAccountButton
             // 
@@ -110,6 +114,7 @@ namespace Punk_Stocks.Forms
             this.createAccountButton.TabIndex = 10;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = true;
+            this.createAccountButton.Click += new System.EventHandler(this.createAccountButton_Click);
             // 
             // confirmPasswordLabel
             // 
@@ -137,6 +142,7 @@ namespace Punk_Stocks.Forms
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(148, 20);
             this.usernameTextBox.TabIndex = 18;
+            this.usernameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.usernameTextBox_Validating);
             // 
             // cashBalanceTextBox
             // 
@@ -146,6 +152,7 @@ namespace Punk_Stocks.Forms
             this.cashBalanceTextBox.Name = "cashBalanceTextBox";
             this.cashBalanceTextBox.Size = new System.Drawing.Size(148, 20);
             this.cashBalanceTextBox.TabIndex = 17;
+            this.cashBalanceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cashBalanceTextBox_Validating);
             // 
             // cashBalanceLabel
             // 
@@ -194,7 +201,7 @@ namespace Punk_Stocks.Forms
             this.MinimumSize = new System.Drawing.Size(492, 310);
             this.Name = "CreateUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateUserForm";
+            this.Text = "Punk-Stocks Account Creation";
             ((System.ComponentModel.ISupportInitialize)(this.validationErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
