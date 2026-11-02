@@ -53,7 +53,7 @@ namespace Punk_Stocks.Forms
             this.promptLabel.Location = new System.Drawing.Point(29, 36);
             this.promptLabel.Name = "promptLabel";
             this.promptLabel.Size = new System.Drawing.Size(419, 64);
-            this.promptLabel.TabIndex = 0;
+            this.promptLabel.TabIndex = 11;
             this.promptLabel.Text = "Enter your information to create a new Punk-Stocks account:";
             this.promptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -64,7 +64,7 @@ namespace Punk_Stocks.Forms
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(148, 20);
-            this.passwordTextBox.TabIndex = 14;
+            this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.passwordTextBox_Validating);
             // 
@@ -75,7 +75,7 @@ namespace Punk_Stocks.Forms
             this.passwordConfirmTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordConfirmTextBox.Name = "passwordConfirmTextBox";
             this.passwordConfirmTextBox.Size = new System.Drawing.Size(148, 20);
-            this.passwordConfirmTextBox.TabIndex = 13;
+            this.passwordConfirmTextBox.TabIndex = 3;
             this.passwordConfirmTextBox.UseSystemPasswordChar = true;
             this.passwordConfirmTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.passwordConfirmTextBox_Validating);
             // 
@@ -87,7 +87,7 @@ namespace Punk_Stocks.Forms
             this.loginLinkLabel.Location = new System.Drawing.Point(147, 267);
             this.loginLinkLabel.Name = "loginLinkLabel";
             this.loginLinkLabel.Size = new System.Drawing.Size(184, 13);
-            this.loginLinkLabel.TabIndex = 12;
+            this.loginLinkLabel.TabIndex = 6;
             this.loginLinkLabel.TabStop = true;
             this.loginLinkLabel.Text = "Already a user? Click here to login.";
             this.loginLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loginLinkLabel_LinkClicked);
@@ -100,7 +100,7 @@ namespace Punk_Stocks.Forms
             this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(109, 29);
-            this.backButton.TabIndex = 11;
+            this.backButton.TabIndex = 5;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
@@ -111,7 +111,7 @@ namespace Punk_Stocks.Forms
             this.createAccountButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(109, 29);
-            this.createAccountButton.TabIndex = 10;
+            this.createAccountButton.TabIndex = 4;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = true;
             this.createAccountButton.Click += new System.EventHandler(this.createAccountButton_Click);
@@ -122,7 +122,7 @@ namespace Punk_Stocks.Forms
             this.confirmPasswordLabel.Location = new System.Drawing.Point(84, 201);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
             this.confirmPasswordLabel.Size = new System.Drawing.Size(94, 13);
-            this.confirmPasswordLabel.TabIndex = 9;
+            this.confirmPasswordLabel.TabIndex = 10;
             this.confirmPasswordLabel.Text = "Confirm Password:";
             // 
             // passwordLabel
@@ -131,7 +131,7 @@ namespace Punk_Stocks.Forms
             this.passwordLabel.Location = new System.Drawing.Point(125, 171);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(56, 13);
-            this.passwordLabel.TabIndex = 8;
+            this.passwordLabel.TabIndex = 9;
             this.passwordLabel.Text = "Password:";
             // 
             // usernameTextBox
@@ -141,7 +141,7 @@ namespace Punk_Stocks.Forms
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(148, 20);
-            this.usernameTextBox.TabIndex = 18;
+            this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.usernameTextBox_Validating);
             // 
             // cashBalanceTextBox
@@ -151,7 +151,7 @@ namespace Punk_Stocks.Forms
             this.cashBalanceTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cashBalanceTextBox.Name = "cashBalanceTextBox";
             this.cashBalanceTextBox.Size = new System.Drawing.Size(148, 20);
-            this.cashBalanceTextBox.TabIndex = 17;
+            this.cashBalanceTextBox.TabIndex = 1;
             this.cashBalanceTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cashBalanceTextBox_Validating);
             // 
             // cashBalanceLabel
@@ -160,7 +160,7 @@ namespace Punk_Stocks.Forms
             this.cashBalanceLabel.Location = new System.Drawing.Point(67, 143);
             this.cashBalanceLabel.Name = "cashBalanceLabel";
             this.cashBalanceLabel.Size = new System.Drawing.Size(115, 13);
-            this.cashBalanceLabel.TabIndex = 16;
+            this.cashBalanceLabel.TabIndex = 8;
             this.cashBalanceLabel.Text = "Starting Cash Balance:";
             // 
             // usernameLabel
@@ -169,7 +169,7 @@ namespace Punk_Stocks.Forms
             this.usernameLabel.Location = new System.Drawing.Point(125, 113);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(61, 13);
-            this.usernameLabel.TabIndex = 15;
+            this.usernameLabel.TabIndex = 7;
             this.usernameLabel.Text = "Username: ";
             // 
             // validationErrorProvider

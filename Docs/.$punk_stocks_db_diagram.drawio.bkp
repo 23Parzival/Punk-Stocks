@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="4UuIJItJBllCgB6k1wZT">
-    <mxGraphModel dx="2054" dy="1201" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0" adaptiveColors="auto">
+    <mxGraphModel dx="1712" dy="1001" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -35,7 +35,7 @@
           <mxGeometry height="26" width="200" y="208" as="geometry" />
         </mxCell>
         <mxCell id="t_stocks" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Stocks" vertex="1">
-          <mxGeometry height="208" width="200" x="400" y="340" as="geometry" />
+          <mxGeometry height="234" width="200" x="400" y="340" as="geometry" />
         </mxCell>
         <mxCell id="s_id" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK StockID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
@@ -57,6 +57,9 @@
         </mxCell>
         <mxCell id="s_div" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="DividendYield" vertex="1">
           <mxGeometry height="26" width="200" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="rmPoH99XXX6LCGgUe_sE-8" parent="t_stocks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="Description" vertex="1">
+          <mxGeometry height="26" width="200" y="208" as="geometry" />
         </mxCell>
         <mxCell id="t_hold" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="Holdings" vertex="1">
           <mxGeometry height="156" width="200" x="40" y="60" as="geometry" />
@@ -137,7 +140,7 @@
           <mxGeometry height="26" width="200" y="156" as="geometry" />
         </mxCell>
         <mxCell id="t_price_hist" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="PriceHistories" vertex="1">
-          <mxGeometry height="130" width="200" x="388" y="620" as="geometry" />
+          <mxGeometry height="130" width="200" x="357" y="690" as="geometry" />
         </mxCell>
         <mxCell id="p_id" parent="t_price_hist" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK PriceHistoryID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
@@ -180,8 +183,8 @@
         <mxCell id="e2" edge="1" parent="1" source="h_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="s_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="310" y="151" />
-              <mxPoint x="310" y="372" />
+              <mxPoint x="319" y="151" />
+              <mxPoint x="319" y="379" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -196,64 +199,65 @@
         <mxCell id="e4" edge="1" parent="1" source="w_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="s_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="703" y="145" />
-              <mxPoint x="703" y="366" />
+              <mxPoint x="694" y="145" />
+              <mxPoint x="694" y="379" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e5" edge="1" parent="1" source="t_user" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="u_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="324" y="405" />
-              <mxPoint x="324" y="106" />
+              <mxPoint x="333" y="405" />
+              <mxPoint x="333" y="99" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e6" edge="1" parent="1" source="t_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="s_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="338" y="431" />
-              <mxPoint x="338" y="386" />
+              <mxPoint x="347" y="431" />
+              <mxPoint x="347" y="379" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e7" edge="1" parent="1" source="a_user" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="u_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="689" y="405" />
-              <mxPoint x="689" y="99" />
+              <mxPoint x="680" y="405" />
+              <mxPoint x="680" y="99" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e8" edge="1" parent="1" source="a_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="s_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="661" y="431" />
-              <mxPoint x="661" y="379" />
+              <mxPoint x="666" y="431" />
+              <mxPoint x="666" y="379" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9" edge="1" parent="1" source="p_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="s_id">
+        <mxCell id="e9" edge="1" parent="1" source="p_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;orthogonalLoop=1;jettySize=auto;" target="s_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="620" y="685" />
-              <mxPoint x="620" y="379" />
+              <mxPoint x="457" y="632" />
+              <mxPoint x="626.3" y="632" />
+              <mxPoint x="626.3" y="379" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e10" edge="1" parent="1" source="d_user" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="u_id">
+        <mxCell id="e10" edge="1" parent="1" source="d_user" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;orthogonalLoop=1;jettySize=auto;" target="u_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="675" y="685" />
-              <mxPoint x="675" y="112" />
+              <mxPoint x="679.7" y="685" />
+              <mxPoint x="679.7" y="99" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e11" edge="1" parent="1" source="d_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;" target="s_id">
+        <mxCell id="e11" edge="1" parent="1" source="d_stock" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=ERmany;endArrow=ERmandOne;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;rounded=0;orthogonalLoop=1;jettySize=auto;" target="s_id">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="647" y="711" />
-              <mxPoint x="647" y="392" />
+              <mxPoint x="644.7" y="711" />
+              <mxPoint x="644.7" y="379" />
             </Array>
           </mxGeometry>
         </mxCell>

@@ -48,7 +48,7 @@ namespace Punk_Stocks.Forms
             this.promptLabel.Location = new System.Drawing.Point(46, 54);
             this.promptLabel.Name = "promptLabel";
             this.promptLabel.Size = new System.Drawing.Size(368, 25);
-            this.promptLabel.TabIndex = 0;
+            this.promptLabel.TabIndex = 7;
             this.promptLabel.Text = "Log In using your Punk-Stocks account:";
             // 
             // usernameLabel
@@ -57,7 +57,7 @@ namespace Punk_Stocks.Forms
             this.usernameLabel.Location = new System.Drawing.Point(122, 99);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(61, 13);
-            this.usernameLabel.TabIndex = 1;
+            this.usernameLabel.TabIndex = 5;
             this.usernameLabel.Text = "Username: ";
             // 
             // passwordLabel
@@ -66,7 +66,7 @@ namespace Punk_Stocks.Forms
             this.passwordLabel.Location = new System.Drawing.Point(122, 129);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(56, 13);
-            this.passwordLabel.TabIndex = 2;
+            this.passwordLabel.TabIndex = 6;
             this.passwordLabel.Text = "Password:";
             // 
             // loginButton
@@ -75,7 +75,7 @@ namespace Punk_Stocks.Forms
             this.loginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(109, 29);
-            this.loginButton.TabIndex = 3;
+            this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Log In";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -87,7 +87,7 @@ namespace Punk_Stocks.Forms
             this.exitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(109, 29);
-            this.exitButton.TabIndex = 4;
+            this.exitButton.TabIndex = 3;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -99,7 +99,7 @@ namespace Punk_Stocks.Forms
             this.createUserLinkLabel.Location = new System.Drawing.Point(122, 196);
             this.createUserLinkLabel.Name = "createUserLinkLabel";
             this.createUserLinkLabel.Size = new System.Drawing.Size(229, 13);
-            this.createUserLinkLabel.TabIndex = 5;
+            this.createUserLinkLabel.TabIndex = 4;
             this.createUserLinkLabel.TabStop = true;
             this.createUserLinkLabel.Text = "Not a user? Click here to create an account.";
             this.createUserLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createUserLinkLabel_LinkClicked);
@@ -111,7 +111,7 @@ namespace Punk_Stocks.Forms
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(148, 20);
-            this.passwordTextBox.TabIndex = 6;
+            this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // usernameTextBox
@@ -121,7 +121,7 @@ namespace Punk_Stocks.Forms
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(148, 20);
-            this.usernameTextBox.TabIndex = 7;
+            this.usernameTextBox.TabIndex = 0;
             // 
             // LoginForm
             // 

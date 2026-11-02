@@ -32,6 +32,7 @@ namespace Punk_Stocks
         public decimal CurrentPrice { get; set; }
         public decimal Volatility { get; set; }
         public decimal DividendYield { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alert> Alerts { get; set; }

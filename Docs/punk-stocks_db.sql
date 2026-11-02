@@ -16,7 +16,8 @@ CREATE TABLE Stocks (
     Sector NVARCHAR(50)  NOT NULL,
     CurrentPrice DECIMAL(18,2) NOT NULL CHECK (CurrentPrice > 0),
     Volatility DECIMAL(9,4)  NOT NULL DEFAULT 0.02,
-    DividendYield DECIMAL(9,4)  NOT NULL DEFAULT 0
+    DividendYield DECIMAL(9,4)  NOT NULL DEFAULT 0,
+    Description NVARCHAR(300) NOT NULL DEFAULT ''
 );
 
 CREATE TABLE Holdings (

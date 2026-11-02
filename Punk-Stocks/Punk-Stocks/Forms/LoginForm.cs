@@ -42,6 +42,21 @@ namespace Punk_Stocks.Forms
 
             passwordTextBox.Clear();
             SessionManager.SignIn(result.User);
+
+            SetBusy(true);
+            try
+            {
+                await Task.Run(() => StockSeeder.SeedIfEmpty());
+            }
+            catch (Exception ex)
+            {
+                SetBusy(false);
+                SessionManager.SignOut();
+                MessageBox.Show("Could not load the stock market data:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SetBusy(false);
+
             OpenMainForm();
         }
 

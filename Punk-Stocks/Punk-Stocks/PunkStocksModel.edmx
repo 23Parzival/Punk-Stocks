@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PunkStocksDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PunkStocksDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Alerts">
           <Key>
             <PropertyRef Name="AlertID" />
@@ -56,6 +56,7 @@
           <Property Name="CurrentPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Volatility" Type="decimal" Precision="9" Scale="4" Nullable="false" />
           <Property Name="DividendYield" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="Transactions">
           <Key>
@@ -287,8 +288,7 @@
             <End Role="WatchlistItems" EntitySet="WatchlistItems" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PunkStocksDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -356,6 +356,7 @@
           <NavigationProperty Name="PriceHistories" Relationship="Self.FK__PriceHist__Stock__02084FDA" FromRole="Stocks" ToRole="PriceHistories" />
           <NavigationProperty Name="Transactions" Relationship="Self.FK__Transacti__Stock__70DDC3D8" FromRole="Stocks" ToRole="Transactions" />
           <NavigationProperty Name="WatchlistItems" Relationship="Self.FK__Watchlist__Stock__787EE5A0" FromRole="Stocks" ToRole="WatchlistItems" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Transaction">
           <Key>
@@ -649,6 +650,7 @@
           <EntitySetMapping Name="Stocks">
             <EntityTypeMapping TypeName="PunkStocksDBModel.Stock">
               <MappingFragment StoreEntitySet="Stocks">
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="StockID" ColumnName="StockID" />
                 <ScalarProperty Name="Symbol" ColumnName="Symbol" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
