@@ -63,12 +63,11 @@ namespace Punk_Stocks.Forms
         private void OpenMainForm()
         {
             Hide();
-            //temp false
-            bool logOut = false;
+            bool logOut;
             using (var main = new MainForm())
             {
                 main.ShowDialog();
-                //logOut = main.LogOutRequested; -> will be true if the user requested to log out from the main form
+                logOut = main.LogOutRequested;
             }
             SessionManager.SignOut();
 
