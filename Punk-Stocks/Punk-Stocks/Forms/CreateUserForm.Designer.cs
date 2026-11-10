@@ -82,15 +82,15 @@ namespace Punk_Stocks.Forms
             // 
             // loginLinkLabel
             // 
-            this.loginLinkLabel.AutoSize = true;
             this.loginLinkLabel.CausesValidation = false;
             this.loginLinkLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLinkLabel.Location = new System.Drawing.Point(147, 267);
+            this.loginLinkLabel.Location = new System.Drawing.Point(12, 267);
             this.loginLinkLabel.Name = "loginLinkLabel";
-            this.loginLinkLabel.Size = new System.Drawing.Size(184, 13);
+            this.loginLinkLabel.Size = new System.Drawing.Size(452, 15);
             this.loginLinkLabel.TabIndex = 6;
             this.loginLinkLabel.TabStop = true;
             this.loginLinkLabel.Text = "Already a user? Click here to login.";
+            this.loginLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.loginLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loginLinkLabel_LinkClicked);
             // 
             // backButton
@@ -119,21 +119,21 @@ namespace Punk_Stocks.Forms
             // 
             // confirmPasswordLabel
             // 
-            this.confirmPasswordLabel.AutoSize = true;
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(84, 201);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(12, 199);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
-            this.confirmPasswordLabel.Size = new System.Drawing.Size(94, 13);
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(185, 20);
             this.confirmPasswordLabel.TabIndex = 10;
             this.confirmPasswordLabel.Text = "Confirm Password:";
-            // 
+            this.confirmPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //
             // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(125, 171);
+            //
+            this.passwordLabel.Location = new System.Drawing.Point(12, 170);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(56, 13);
+            this.passwordLabel.Size = new System.Drawing.Size(185, 20);
             this.passwordLabel.TabIndex = 9;
             this.passwordLabel.Text = "Password:";
+            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // usernameTextBox
             // 
@@ -157,21 +157,21 @@ namespace Punk_Stocks.Forms
             // 
             // cashBalanceLabel
             // 
-            this.cashBalanceLabel.AutoSize = true;
-            this.cashBalanceLabel.Location = new System.Drawing.Point(67, 143);
+            this.cashBalanceLabel.Location = new System.Drawing.Point(12, 141);
             this.cashBalanceLabel.Name = "cashBalanceLabel";
-            this.cashBalanceLabel.Size = new System.Drawing.Size(115, 13);
+            this.cashBalanceLabel.Size = new System.Drawing.Size(185, 20);
             this.cashBalanceLabel.TabIndex = 8;
             this.cashBalanceLabel.Text = "Starting Cash Balance:";
-            // 
+            this.cashBalanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //
             // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(125, 113);
+            //
+            this.usernameLabel.Location = new System.Drawing.Point(12, 112);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(61, 13);
+            this.usernameLabel.Size = new System.Drawing.Size(185, 20);
             this.usernameLabel.TabIndex = 7;
             this.usernameLabel.Text = "Username: ";
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // validationErrorProvider
             // 
@@ -181,15 +181,15 @@ namespace Punk_Stocks.Forms
             // changeLanguageLinkLabel
             // 
             this.changeLanguageLinkLabel.ActiveLinkColor = System.Drawing.Color.DarkOliveGreen;
-            this.changeLanguageLinkLabel.AutoSize = true;
             this.changeLanguageLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.changeLanguageLinkLabel.LinkColor = System.Drawing.Color.Black;
-            this.changeLanguageLinkLabel.Location = new System.Drawing.Point(207, 321);
+            this.changeLanguageLinkLabel.Location = new System.Drawing.Point(12, 321);
             this.changeLanguageLinkLabel.Name = "changeLanguageLinkLabel";
-            this.changeLanguageLinkLabel.Size = new System.Drawing.Size(62, 13);
+            this.changeLanguageLinkLabel.Size = new System.Drawing.Size(452, 15);
             this.changeLanguageLinkLabel.TabIndex = 12;
             this.changeLanguageLinkLabel.TabStop = true;
             this.changeLanguageLinkLabel.Text = "🌐 Français";
+            this.changeLanguageLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.changeLanguageLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeLanguageLinkLabel_LinkClicked);
             // 
             // CreateUserForm

@@ -44,31 +44,31 @@ namespace Punk_Stocks.Forms
             // 
             // promptLabel
             // 
-            this.promptLabel.AutoSize = true;
             this.promptLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.promptLabel.Location = new System.Drawing.Point(46, 54);
+            this.promptLabel.Location = new System.Drawing.Point(12, 34);
             this.promptLabel.Name = "promptLabel";
-            this.promptLabel.Size = new System.Drawing.Size(368, 25);
+            this.promptLabel.Size = new System.Drawing.Size(452, 56);
             this.promptLabel.TabIndex = 7;
             this.promptLabel.Text = "Log In using your Punk-Stocks account:";
-            // 
+            this.promptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //
             // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(122, 99);
+            //
+            this.usernameLabel.Location = new System.Drawing.Point(12, 98);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(61, 13);
+            this.usernameLabel.Size = new System.Drawing.Size(185, 20);
             this.usernameLabel.TabIndex = 5;
             this.usernameLabel.Text = "Username: ";
-            // 
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //
             // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(122, 129);
+            //
+            this.passwordLabel.Location = new System.Drawing.Point(12, 127);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(56, 13);
+            this.passwordLabel.Size = new System.Drawing.Size(185, 20);
             this.passwordLabel.TabIndex = 6;
             this.passwordLabel.Text = "Password:";
+            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // loginButton
             // 
@@ -95,14 +95,14 @@ namespace Punk_Stocks.Forms
             // 
             // createUserLinkLabel
             // 
-            this.createUserLinkLabel.AutoSize = true;
             this.createUserLinkLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createUserLinkLabel.Location = new System.Drawing.Point(122, 196);
+            this.createUserLinkLabel.Location = new System.Drawing.Point(12, 196);
             this.createUserLinkLabel.Name = "createUserLinkLabel";
-            this.createUserLinkLabel.Size = new System.Drawing.Size(229, 13);
+            this.createUserLinkLabel.Size = new System.Drawing.Size(452, 15);
             this.createUserLinkLabel.TabIndex = 4;
             this.createUserLinkLabel.TabStop = true;
             this.createUserLinkLabel.Text = "Not a user? Click here to create an account.";
+            this.createUserLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.createUserLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createUserLinkLabel_LinkClicked);
             // 
             // passwordTextBox
@@ -127,15 +127,15 @@ namespace Punk_Stocks.Forms
             // changeLanguageLinkLabel
             // 
             this.changeLanguageLinkLabel.ActiveLinkColor = System.Drawing.Color.DarkOliveGreen;
-            this.changeLanguageLinkLabel.AutoSize = true;
             this.changeLanguageLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.changeLanguageLinkLabel.LinkColor = System.Drawing.Color.Black;
-            this.changeLanguageLinkLabel.Location = new System.Drawing.Point(202, 256);
+            this.changeLanguageLinkLabel.Location = new System.Drawing.Point(12, 256);
             this.changeLanguageLinkLabel.Name = "changeLanguageLinkLabel";
-            this.changeLanguageLinkLabel.Size = new System.Drawing.Size(62, 13);
+            this.changeLanguageLinkLabel.Size = new System.Drawing.Size(452, 15);
             this.changeLanguageLinkLabel.TabIndex = 8;
             this.changeLanguageLinkLabel.TabStop = true;
             this.changeLanguageLinkLabel.Text = "🌐 Français";
+            this.changeLanguageLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.changeLanguageLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeLanguageLinkLabel_LinkClicked);
             // 
             // LoginForm
