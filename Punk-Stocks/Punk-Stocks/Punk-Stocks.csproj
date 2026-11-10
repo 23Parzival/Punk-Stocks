@@ -127,6 +127,12 @@
       <DependentUpon>DashboardPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\IContentPanel.cs" />
+    <Compile Include="Panels\MarketPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MarketPanel.Designer.cs">
+      <DependentUpon>MarketPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\PanelStyle.cs" />
     <Compile Include="PriceHistory.cs">
       <DependentUpon>PunkStocksModel.tt</DependentUpon>
@@ -149,8 +155,10 @@
       <DependentUpon>PunkStocksModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Repositories\HoldingRepository.cs" />
+    <Compile Include="Repositories\StockRepository.cs" />
     <Compile Include="Repositories\TransactionRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\WatchlistRepository.cs" />
     <Compile Include="Services\AuthResult.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\SessionManager.cs" />

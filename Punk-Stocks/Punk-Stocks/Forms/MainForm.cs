@@ -96,9 +96,9 @@ namespace Punk_Stocks.Forms
 
         private UserControl CreatePanel(Button button)
         {
-            /*
             if (button == marketButton)
                 return new MarketPanel();
+            /*
             if (button == holdingsButton)
                 return new HoldingsPanel();
             if (button == watchlistButton)
