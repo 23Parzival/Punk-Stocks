@@ -8,9 +8,9 @@ namespace Punk_Stocks.Services
         {
             username = (username ?? "").Trim();
             if (username.Length < 4)
-                return "Username must be at least 4 characters.";
+                return LanguageManager.Get("Validation_UsernameTooShort");
             else if (username.Length > 50)
-                return "Username cannot exceed 50 characters.";
+                return LanguageManager.Get("Validation_UsernameTooLong");
             return null;
         }
 
@@ -18,20 +18,20 @@ namespace Punk_Stocks.Services
         {
             password = password ?? "";
             if (password.Length < 8)
-                return "Password must be at least 8 characters.";
+                return LanguageManager.Get("Validation_PasswordTooShort");
             if (password.Length > 128)
-                return "Password cannot exceed 128 characters.";
+                return LanguageManager.Get("Validation_PasswordTooLong");
             if (!password.Any(char.IsUpper) || !password.Any(char.IsLower) || !password.Any(char.IsDigit))
-                return "Include an uppercase letter, a lowercase letter and a number.";
+                return LanguageManager.Get("Validation_PasswordComplexity");
             return null;
         }
 
         public static string ValidateStartingCash(string input)
         {
             if (!decimal.TryParse(input, out decimal cash) || cash <= 0)
-                return "Enter a positive number, e.g. 10000.";
+                return LanguageManager.Get("Validation_CashInvalid");
             else if (cash > 300000 || cash < 1000)
-                return "Starting cash cannot exceed 300000 and must be at least 1000.";
+                return LanguageManager.Get("Validation_CashRange");
             return null;
         }
     }

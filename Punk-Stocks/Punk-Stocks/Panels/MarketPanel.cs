@@ -26,7 +26,30 @@ namespace Punk_Stocks.Panels
 
         public void ApplyLanguage()
         {
-            //not done
+            titleLabel.Text = LanguageManager.Get("Nav_Market");
+            searchLabel.Text = LanguageManager.Get("Market_Search");
+            sectorLabel.Text = LanguageManager.Get("Market_Sector");
+            quantityLabel.Text = LanguageManager.Get("Market_Quantity");
+            buyButton.Text = LanguageManager.Get("Market_Buy");
+            sellButton.Text = LanguageManager.Get("Market_Sell");
+            watchButton.Text = LanguageManager.Get("Market_Watch");
+
+            idColumn.HeaderText = LanguageManager.Get("Column_ID");
+            symbolColumn.HeaderText = LanguageManager.Get("Column_Symbol");
+            companyColumn.HeaderText = LanguageManager.Get("Column_Company");
+            sectorColumn.HeaderText = LanguageManager.Get("Column_Sector");
+            priceColumn.HeaderText = LanguageManager.Get("Column_Price");
+            volatilityColumn.HeaderText = LanguageManager.Get("Column_Volatility");
+            yieldColumn.HeaderText = LanguageManager.Get("Column_DividendYield");
+
+            if (sectorComboBox.Items.Count > 0)
+            {
+                fillingSectors = true;
+                sectorComboBox.Items[0] = LanguageManager.Get("Market_AllSectors");
+                fillingSectors = false;
+            }
+
+            UpdateSelection();
         }
 
         public async void RefreshData()
@@ -50,7 +73,7 @@ namespace Punk_Stocks.Panels
         {
             fillingSectors = true;
             sectorComboBox.Items.Clear();
-            sectorComboBox.Items.Add("All sectors");
+            sectorComboBox.Items.Add(LanguageManager.Get("Market_AllSectors"));
             foreach (string sector in sectors)
                 sectorComboBox.Items.Add(sector);
             sectorComboBox.SelectedIndex = 0;
@@ -113,7 +136,7 @@ namespace Punk_Stocks.Panels
 
             if (!hasStock)
             {
-                stockNameLabel.Text = "Select a stock";
+                stockNameLabel.Text = LanguageManager.Get("Market_SelectStock");
                 descriptionLabel.Text = "";
                 estimateLabel.Text = "";
                 return;
@@ -121,7 +144,7 @@ namespace Punk_Stocks.Panels
 
             stockNameLabel.Text = stock.Symbol + " - " + stock.CompanyName;
             descriptionLabel.Text = stock.Description;
-            estimateLabel.Text = "Estimated total: " + (stock.CurrentPrice * quantityNumericUpDown.Value).ToString("C2");
+            estimateLabel.Text = LanguageManager.Format("Market_EstimatedTotal", (stock.CurrentPrice * quantityNumericUpDown.Value).ToString("C2"));
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
@@ -169,12 +192,12 @@ namespace Punk_Stocks.Panels
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Could not save the changes:" + "\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(LanguageManager.Get("Error_Save") + "\n" + ex.Message, LanguageManager.Get("Error_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            string message = stock.Symbol + (added ? " was added to your watchlist." : " is already on your watchlist.");
-            MessageBox.Show(message, "Watchlist", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string message = LanguageManager.Format(added ? "Market_WatchAdded" : "Market_WatchExists", stock.Symbol);
+            MessageBox.Show(message, LanguageManager.Get("Nav_Watchlist"),MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

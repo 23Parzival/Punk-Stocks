@@ -1,9 +1,11 @@
+using Punk_Stocks.Models.Enums;
 using Punk_Stocks.Panels;
 using Punk_Stocks.Repositories;
 using Punk_Stocks.Services;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Punk_Stocks.Forms
@@ -30,8 +32,9 @@ namespace Punk_Stocks.Forms
             adminButton.Visible = user.IsAdmin;
 
             SessionManager.CashChanged += SessionManager_CashChanged;
+            LanguageManager.LanguageChanged += LanguageManager_LanguageChanged;
 
-            RefreshStatusBar();
+            ApplyLanguage();
             clockLabel.Text = DateTime.Now.ToString("HH:mm:ss");
             ShowPanel(dashboardButton);
         }
@@ -39,6 +42,65 @@ namespace Punk_Stocks.Forms
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             SessionManager.CashChanged -= SessionManager_CashChanged;
+            LanguageManager.LanguageChanged -= LanguageManager_LanguageChanged;
+        }
+
+        private void ApplyLanguage()
+        {
+            fileMenuItem.Text = LanguageManager.Get("Menu_File");
+            refreshMenuItem.Text = LanguageManager.Get("Menu_Refresh");
+            logOutMenuItem.Text = LanguageManager.Get("Menu_LogOut");
+            exitMenuItem.Text = LanguageManager.Get("Menu_Exit");
+            viewMenuItem.Text = LanguageManager.Get("Menu_View");
+            lightThemeMenuItem.Text = LanguageManager.Get("Menu_LightTheme");
+            darkThemeMenuItem.Text = LanguageManager.Get("Menu_DarkTheme");
+            settingsMenuItem.Text = LanguageManager.Get("Menu_Settings");
+            languageMenuItem.Text = LanguageManager.Get("Menu_Language");
+            helpMenuItem.Text = LanguageManager.Get("Menu_Help");
+            glossaryMenuItem.Text = LanguageManager.Get("Menu_Glossary");
+            aboutMenuItem.Text = LanguageManager.Get("Menu_About");
+
+            englishMenuItem.Checked = LanguageManager.Current == AppLanguage.English;
+            frenchMenuItem.Checked = LanguageManager.Current == AppLanguage.French;
+
+            dashboardButton.Text = LanguageManager.Get("Nav_Dashboard");
+            marketButton.Text = LanguageManager.Get("Nav_Market");
+            holdingsButton.Text = LanguageManager.Get("Nav_Holdings");
+            watchlistButton.Text = LanguageManager.Get("Nav_Watchlist");
+            historyButton.Text = LanguageManager.Get("Nav_History");
+            reportsButton.Text = LanguageManager.Get("Nav_Reports");
+            glossaryButton.Text = LanguageManager.Get("Nav_Glossary");
+            adminButton.Text = LanguageManager.Get("Nav_Admin");
+            settingsButton.Text = LanguageManager.Get("Nav_Settings");
+
+            RefreshStatusBar();
+
+            foreach (UserControl panel in panels.Values)
+                ((IContentPanel)panel).ApplyLanguage();
+        }
+
+        private void LanguageManager_LanguageChanged(object sender, EventArgs e)
+        {
+            ApplyLanguage();
+        }
+
+        private async void ChangeLanguage(AppLanguage language)
+        {
+            User user = SessionManager.CurrentUser;
+            if (user == null || LanguageManager.Current == language)
+                return;
+
+            LanguageManager.SetLanguage(language);
+            user.Language = (int)language;
+
+            try
+            {
+                await Task.Run(() => userRepository.UpdateLanguage(user.UserID, (int)language));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(LanguageManager.Get("Error_Save") + "\n" + ex.Message, LanguageManager.Get("Error_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //status bar
@@ -48,8 +110,8 @@ namespace Punk_Stocks.Forms
             if (user == null)
                 return;
 
-            userStatusLabel.Text = "User: " + user.Username;
-            cashStatusLabel.Text = "Cash: " + user.CashBalance.ToString("C2");
+            userStatusLabel.Text = LanguageManager.Format("Status_User", user.Username);
+            cashStatusLabel.Text = LanguageManager.Format("Status_Cash", user.CashBalance.ToString("C2"));
         }
 
         private void SessionManager_CashChanged(object sender, EventArgs e)
@@ -160,10 +222,12 @@ namespace Punk_Stocks.Forms
 
         private void englishMenuItem_Click(object sender, EventArgs e)
         {
+            ChangeLanguage(AppLanguage.English);
         }
 
         private void frenchMenuItem_Click(object sender, EventArgs e)
         {
+            ChangeLanguage(AppLanguage.French);
         }
 
         private void glossaryMenuItem_Click(object sender, EventArgs e)
@@ -173,7 +237,7 @@ namespace Punk_Stocks.Forms
 
         private void aboutMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Punk-Stocks v1.0\nA stock market simulator for new investors.\nSimulated data and virtual money only.", "About Punk-Stocks", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(LanguageManager.Get("About_Message"), LanguageManager.Get("About_Title"),MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

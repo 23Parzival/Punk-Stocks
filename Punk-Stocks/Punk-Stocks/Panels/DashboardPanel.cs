@@ -24,7 +24,19 @@ namespace Punk_Stocks.Panels
 
         public void ApplyLanguage()
         {
-            //not done
+            titleLabel.Text = LanguageManager.Get("Nav_Dashboard");
+            cashCaptionLabel.Text = LanguageManager.Get("Dashboard_Cash");
+            holdingsCaptionLabel.Text = LanguageManager.Get("Dashboard_HoldingsValue");
+            netWorthCaptionLabel.Text = LanguageManager.Get("Dashboard_NetWorth");
+            profitCaptionLabel.Text = LanguageManager.Get("Dashboard_Profit");
+            recentLabel.Text = LanguageManager.Get("Dashboard_Recent");
+
+            dateColumn.HeaderText = LanguageManager.Get("Column_Date");
+            typeColumn.HeaderText = LanguageManager.Get("Column_Type");
+            symbolColumn.HeaderText = LanguageManager.Get("Column_Symbol");
+            quantityColumn.HeaderText = LanguageManager.Get("Column_Quantity");
+            priceColumn.HeaderText = LanguageManager.Get("Column_Price");
+            totalColumn.HeaderText = LanguageManager.Get("Column_Total");
         }
 
         public async void RefreshData()

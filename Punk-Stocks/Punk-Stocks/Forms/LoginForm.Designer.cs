@@ -39,6 +39,7 @@ namespace Punk_Stocks.Forms
             this.createUserLinkLabel = new System.Windows.Forms.LinkLabel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.changeLanguageLinkLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // promptLabel
@@ -123,13 +124,28 @@ namespace Punk_Stocks.Forms
             this.usernameTextBox.Size = new System.Drawing.Size(148, 20);
             this.usernameTextBox.TabIndex = 0;
             // 
+            // changeLanguageLinkLabel
+            // 
+            this.changeLanguageLinkLabel.ActiveLinkColor = System.Drawing.Color.DarkOliveGreen;
+            this.changeLanguageLinkLabel.AutoSize = true;
+            this.changeLanguageLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.changeLanguageLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.changeLanguageLinkLabel.Location = new System.Drawing.Point(202, 256);
+            this.changeLanguageLinkLabel.Name = "changeLanguageLinkLabel";
+            this.changeLanguageLinkLabel.Size = new System.Drawing.Size(62, 13);
+            this.changeLanguageLinkLabel.TabIndex = 8;
+            this.changeLanguageLinkLabel.TabStop = true;
+            this.changeLanguageLinkLabel.Text = "🌐 Français";
+            this.changeLanguageLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeLanguageLinkLabel_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(476, 271);
+            this.ClientSize = new System.Drawing.Size(476, 278);
+            this.Controls.Add(this.changeLanguageLinkLabel);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.createUserLinkLabel);
@@ -143,6 +159,8 @@ namespace Punk_Stocks.Forms
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Punk-Stocks Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +176,6 @@ namespace Punk_Stocks.Forms
         private LinkLabel createUserLinkLabel;
         private TextBox passwordTextBox;
         private TextBox usernameTextBox;
+        private LinkLabel changeLanguageLinkLabel;
     }
 }

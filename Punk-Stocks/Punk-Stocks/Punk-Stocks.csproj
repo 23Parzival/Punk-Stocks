@@ -161,6 +161,7 @@
     <Compile Include="Repositories\WatchlistRepository.cs" />
     <Compile Include="Services\AuthResult.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\LanguageManager.cs" />
     <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\StockSeeder.cs" />
     <Compile Include="Services\ValidationService.cs" />
@@ -192,6 +193,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx">
+      <DependentUpon>Resources.resx</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

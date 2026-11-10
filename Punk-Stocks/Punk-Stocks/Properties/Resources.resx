@@ -114,4 +114,267 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_Load" xml:space="preserve">
+    <value>Could not load the data:</value>
+  </data>
+  <data name="Error_Save" xml:space="preserve">
+    <value>Could not save the changes:</value>
+  </data>
+  <data name="Common_Username" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="Common_Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Punk-Stocks Login</value>
+  </data>
+  <data name="Login_Prompt" xml:space="preserve">
+    <value>Log In using your Punk-Stocks account:</value>
+  </data>
+  <data name="Login_Button" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Login_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Login_CreateLink" xml:space="preserve">
+    <value>Not a user? Click here to create an account.</value>
+  </data>
+  <data name="Login_Error" xml:space="preserve">
+    <value>Could not log in:</value>
+  </data>
+  <data name="Login_FailedTitle" xml:space="preserve">
+    <value>Login failed</value>
+  </data>
+  <data name="Login_SeedError" xml:space="preserve">
+    <value>Could not load the stock market data:</value>
+  </data>
+  <data name="CreateUser_Title" xml:space="preserve">
+    <value>Punk-Stocks Account Creation</value>
+  </data>
+  <data name="CreateUser_Prompt" xml:space="preserve">
+    <value>Enter your information to create a new Punk-Stocks account:</value>
+  </data>
+  <data name="CreateUser_StartingCash" xml:space="preserve">
+    <value>Starting Cash Balance:</value>
+  </data>
+  <data name="CreateUser_ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password:</value>
+  </data>
+  <data name="CreateUser_Create" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="CreateUser_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="CreateUser_LoginLink" xml:space="preserve">
+    <value>Already a user? Click here to login.</value>
+  </data>
+  <data name="CreateUser_Error" xml:space="preserve">
+    <value>Could not create the account:</value>
+  </data>
+  <data name="CreateUser_FailedTitle" xml:space="preserve">
+    <value>Account not created</value>
+  </data>
+  <data name="CreateUser_Success" xml:space="preserve">
+    <value>Account created! You can now log in.</value>
+  </data>
+  <data name="CreateUser_SuccessTitle" xml:space="preserve">
+    <value>Welcome to Punk-Stocks</value>
+  </data>
+  <data name="Validation_UsernameTooShort" xml:space="preserve">
+    <value>Username must be at least 4 characters.</value>
+  </data>
+  <data name="Validation_UsernameTooLong" xml:space="preserve">
+    <value>Username cannot exceed 50 characters.</value>
+  </data>
+  <data name="Validation_PasswordTooShort" xml:space="preserve">
+    <value>Password must be at least 8 characters.</value>
+  </data>
+  <data name="Validation_PasswordTooLong" xml:space="preserve">
+    <value>Password cannot exceed 128 characters.</value>
+  </data>
+  <data name="Validation_PasswordComplexity" xml:space="preserve">
+    <value>Include an uppercase letter, a lowercase letter and a number.</value>
+  </data>
+  <data name="Validation_PasswordMismatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="Validation_CashInvalid" xml:space="preserve">
+    <value>Enter a positive number, e.g. 10000.</value>
+  </data>
+  <data name="Validation_CashRange" xml:space="preserve">
+    <value>Starting cash cannot exceed 300000 and must be at least 1000.</value>
+  </data>
+  <data name="Auth_UsernameTaken" xml:space="preserve">
+    <value>That username is already taken.</value>
+  </data>
+  <data name="Auth_MissingCredentials" xml:space="preserve">
+    <value>Please enter your username and password.</value>
+  </data>
+  <data name="Auth_InvalidCredentials" xml:space="preserve">
+    <value>Invalid username or password.</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="Menu_Refresh" xml:space="preserve">
+    <value>&amp;Refresh Stocks</value>
+  </data>
+  <data name="Menu_LogOut" xml:space="preserve">
+    <value>&amp;Log Out</value>
+  </data>
+  <data name="Menu_Exit" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="Menu_LightTheme" xml:space="preserve">
+    <value>&amp;Light Theme</value>
+  </data>
+  <data name="Menu_DarkTheme" xml:space="preserve">
+    <value>&amp;Dark Theme</value>
+  </data>
+  <data name="Menu_Settings" xml:space="preserve">
+    <value>&amp;Settings</value>
+  </data>
+  <data name="Menu_Language" xml:space="preserve">
+    <value>&amp;Language</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="Menu_Glossary" xml:space="preserve">
+    <value>&amp;Glossary</value>
+  </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Nav_Market" xml:space="preserve">
+    <value>Market</value>
+  </data>
+  <data name="Nav_Holdings" xml:space="preserve">
+    <value>Holdings</value>
+  </data>
+  <data name="Nav_Watchlist" xml:space="preserve">
+    <value>Watchlist</value>
+  </data>
+  <data name="Nav_History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="Nav_Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Nav_Glossary" xml:space="preserve">
+    <value>Glossary</value>
+  </data>
+  <data name="Nav_Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Status_User" xml:space="preserve">
+    <value>User: {0}</value>
+  </data>
+  <data name="Status_Cash" xml:space="preserve">
+    <value>Cash: {0}</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>About Punk-Stocks</value>
+  </data>
+  <data name="About_Message" xml:space="preserve">
+    <value>Punk-Stocks v1.0
+A stock market simulator for new investors.
+Simulated data and virtual money only.</value>
+  </data>
+  <data name="Dashboard_Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Dashboard_HoldingsValue" xml:space="preserve">
+    <value>Holdings value</value>
+  </data>
+  <data name="Dashboard_NetWorth" xml:space="preserve">
+    <value>Net worth</value>
+  </data>
+  <data name="Dashboard_Profit" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="Dashboard_Recent" xml:space="preserve">
+    <value>Recent transactions</value>
+  </data>
+  <data name="Column_ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Column_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Column_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Column_Symbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="Column_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Column_Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="Column_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Column_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Column_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Column_Volatility" xml:space="preserve">
+    <value>Volatility</value>
+  </data>
+  <data name="Column_DividendYield" xml:space="preserve">
+    <value>Dividend yield</value>
+  </data>
+  <data name="Market_Search" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="Market_Sector" xml:space="preserve">
+    <value>Sector:</value>
+  </data>
+  <data name="Market_Quantity" xml:space="preserve">
+    <value>Quantity:</value>
+  </data>
+  <data name="Market_Buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="Market_Sell" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="Market_Watch" xml:space="preserve">
+    <value>Add to watchlist</value>
+  </data>
+  <data name="Market_SelectStock" xml:space="preserve">
+    <value>Select a stock</value>
+  </data>
+  <data name="Market_AllSectors" xml:space="preserve">
+    <value>All sectors</value>
+  </data>
+  <data name="Market_EstimatedTotal" xml:space="preserve">
+    <value>Estimated total: {0}</value>
+  </data>
+  <data name="Market_WatchAdded" xml:space="preserve">
+    <value>{0} was added to your watchlist.</value>
+  </data>
+  <data name="Market_WatchExists" xml:space="preserve">
+    <value>{0} is already on your watchlist.</value>
+  </data>
 </root>

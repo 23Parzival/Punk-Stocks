@@ -40,7 +40,7 @@ namespace Punk_Stocks.Panels
 
         public static void ShowLoadError(Exception ex)
         {
-            MessageBox.Show("Could not load the data:" + "\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(LanguageManager.Get("Error_Load") + "\n" + ex.Message, LanguageManager.Get("Error_Title"),MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

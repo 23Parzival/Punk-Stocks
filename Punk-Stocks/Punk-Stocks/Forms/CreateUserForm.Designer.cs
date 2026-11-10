@@ -44,6 +44,7 @@ namespace Punk_Stocks.Forms
             this.cashBalanceLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.validationErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.changeLanguageLinkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.validationErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,6 +178,20 @@ namespace Punk_Stocks.Forms
             this.validationErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationErrorProvider.ContainerControl = this;
             // 
+            // changeLanguageLinkLabel
+            // 
+            this.changeLanguageLinkLabel.ActiveLinkColor = System.Drawing.Color.DarkOliveGreen;
+            this.changeLanguageLinkLabel.AutoSize = true;
+            this.changeLanguageLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.changeLanguageLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.changeLanguageLinkLabel.Location = new System.Drawing.Point(207, 321);
+            this.changeLanguageLinkLabel.Name = "changeLanguageLinkLabel";
+            this.changeLanguageLinkLabel.Size = new System.Drawing.Size(62, 13);
+            this.changeLanguageLinkLabel.TabIndex = 12;
+            this.changeLanguageLinkLabel.TabStop = true;
+            this.changeLanguageLinkLabel.Text = "🌐 Français";
+            this.changeLanguageLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeLanguageLinkLabel_LinkClicked);
+            // 
             // CreateUserForm
             // 
             this.AcceptButton = this.createAccountButton;
@@ -184,7 +199,8 @@ namespace Punk_Stocks.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.CancelButton = this.backButton;
-            this.ClientSize = new System.Drawing.Size(476, 335);
+            this.ClientSize = new System.Drawing.Size(476, 342);
+            this.Controls.Add(this.changeLanguageLinkLabel);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.cashBalanceTextBox);
             this.Controls.Add(this.cashBalanceLabel);
@@ -202,6 +218,8 @@ namespace Punk_Stocks.Forms
             this.Name = "CreateUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Punk-Stocks Account Creation";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateUserForm_FormClosed);
+            this.Load += new System.EventHandler(this.CreateUserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.validationErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,5 +241,6 @@ namespace Punk_Stocks.Forms
         private Label cashBalanceLabel;
         private Label usernameLabel;
         private ErrorProvider validationErrorProvider;
+        private LinkLabel changeLanguageLinkLabel;
     }
 }

@@ -18,7 +18,7 @@ namespace Punk_Stocks.Services
             password = password ?? "";
 
             if (users.UsernameExists(username))
-                return AuthResult.Fail("That username is already taken.");
+                return AuthResult.Fail(LanguageManager.Get("Auth_UsernameTaken"));
 
             var user = new User
             {
@@ -41,12 +41,12 @@ namespace Punk_Stocks.Services
             password = password ?? "";
 
             if (username.Length == 0 || password.Length == 0)
-                return AuthResult.Fail("Please enter your username and password.");
+                return AuthResult.Fail(LanguageManager.Get("Auth_MissingCredentials"));
 
             User user = users.GetByUsername(username);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
-                return AuthResult.Fail("Invalid username or password.");
+                return AuthResult.Fail(LanguageManager.Get("Auth_InvalidCredentials"));
 
             return AuthResult.Ok(user);
         }

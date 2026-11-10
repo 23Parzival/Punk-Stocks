@@ -30,5 +30,18 @@ namespace Punk_Stocks.Repositories
                 return user;
             }
         }
+
+        public void UpdateLanguage(int userId, int language)
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                User user = db.Users.Find(userId);
+                if (user == null)
+                    return;
+
+                user.Language = language;
+                db.SaveChanges();
+            }
+        }
     }
 }
