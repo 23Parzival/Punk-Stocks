@@ -28,9 +28,9 @@ namespace Punk_Stocks.Panels
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleLabel = new System.Windows.Forms.Label();
             this.cardsTable = new System.Windows.Forms.TableLayoutPanel();
             this.cashPanel = new System.Windows.Forms.Panel();
@@ -280,8 +280,8 @@ namespace Punk_Stocks.Panels
             // dateColumn
             // 
             this.dateColumn.DataPropertyName = "ExecutedAt";
-            dataGridViewCellStyle4.Format = "g";
-            this.dateColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "g";
+            this.dateColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dateColumn.HeaderText = "Date";
             this.dateColumn.Name = "dateColumn";
             // 
@@ -306,16 +306,16 @@ namespace Punk_Stocks.Panels
             // priceColumn
             // 
             this.priceColumn.DataPropertyName = "PricePerShare";
-            dataGridViewCellStyle5.Format = "C2";
-            this.priceColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "C2";
+            this.priceColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.priceColumn.HeaderText = "Price";
             this.priceColumn.Name = "priceColumn";
             // 
             // totalColumn
             // 
             this.totalColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle6.Format = "C2";
-            this.totalColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "C2";
+            this.totalColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.totalColumn.HeaderText = "Total";
             this.totalColumn.Name = "totalColumn";
             // 

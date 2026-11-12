@@ -377,4 +377,70 @@ Données simulées et argent virtuel seulement.</value>
   <data name="Market_WatchExists" xml:space="preserve">
     <value>{0} est déjà dans votre liste de suivi.</value>
   </data>
+  <data name="Column_AvgCost" xml:space="preserve">
+    <value>Coût moyen</value>
+  </data>
+  <data name="Column_MarketValue" xml:space="preserve">
+    <value>Valeur marchande</value>
+  </data>
+  <data name="Column_Profit" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="Column_Cash" xml:space="preserve">
+    <value>Liquidités</value>
+  </data>
+  <data name="Column_IsAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Column_CreatedAt" xml:space="preserve">
+    <value>Créé le</value>
+  </data>
+  <data name="Watchlist_Remove" xml:space="preserve">
+    <value>Retirer</value>
+  </data>
+  <data name="Reports_Type" xml:space="preserve">
+    <value>Type de rapport</value>
+  </data>
+  <data name="Reports_Generate" xml:space="preserve">
+    <value>Générer</value>
+  </data>
+  <data name="Reports_Portfolio" xml:space="preserve">
+    <value>Sommaire du portefeuille</value>
+  </data>
+  <data name="Reports_Sectors" xml:space="preserve">
+    <value>Répartition par secteur</value>
+  </data>
+  <data name="Reports_ProfitLoss" xml:space="preserve">
+    <value>Gains et pertes par action</value>
+  </data>
+  <data name="Glossary_Search" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="Admin_ResetCash" xml:space="preserve">
+    <value>Réinitialiser l'argent</value>
+  </data>
+  <data name="Admin_DeleteUser" xml:space="preserve">
+    <value>Supprimer l'utilisateur</value>
+  </data>
+  <data name="Settings_Preferences" xml:space="preserve">
+    <value>Préférences</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>Thème</value>
+  </data>
+  <data name="Settings_ChangePassword" xml:space="preserve">
+    <value>Changer le mot de passe</value>
+  </data>
+  <data name="Settings_CurrentPassword" xml:space="preserve">
+    <value>Mot de passe actuel</value>
+  </data>
+  <data name="Settings_NewPassword" xml:space="preserve">
+    <value>Nouveau mot de passe</value>
+  </data>
+  <data name="Settings_ConfirmPassword" xml:space="preserve">
+    <value>Confirmer le mot de passe</value>
+  </data>
 </root>

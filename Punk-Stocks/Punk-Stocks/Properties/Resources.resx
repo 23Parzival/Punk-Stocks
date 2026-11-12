@@ -377,4 +377,70 @@ Simulated data and virtual money only.</value>
   <data name="Market_WatchExists" xml:space="preserve">
     <value>{0} is already on your watchlist.</value>
   </data>
+  <data name="Column_AvgCost" xml:space="preserve">
+    <value>Avg. cost</value>
+  </data>
+  <data name="Column_MarketValue" xml:space="preserve">
+    <value>Market value</value>
+  </data>
+  <data name="Column_Profit" xml:space="preserve">
+    <value>Profit</value>
+  </data>
+  <data name="Column_Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Column_IsAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Column_CreatedAt" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="Watchlist_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Reports_Type" xml:space="preserve">
+    <value>Report type</value>
+  </data>
+  <data name="Reports_Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="Reports_Portfolio" xml:space="preserve">
+    <value>Portfolio summary</value>
+  </data>
+  <data name="Reports_Sectors" xml:space="preserve">
+    <value>Sector allocation</value>
+  </data>
+  <data name="Reports_ProfitLoss" xml:space="preserve">
+    <value>Profit and loss by stock</value>
+  </data>
+  <data name="Glossary_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Admin_ResetCash" xml:space="preserve">
+    <value>Reset cash</value>
+  </data>
+  <data name="Admin_DeleteUser" xml:space="preserve">
+    <value>Delete user</value>
+  </data>
+  <data name="Settings_Preferences" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Settings_ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Settings_CurrentPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="Settings_NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="Settings_ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
 </root>

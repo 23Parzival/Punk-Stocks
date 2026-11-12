@@ -160,7 +160,6 @@ namespace Punk_Stocks.Forms
         {
             if (button == marketButton)
                 return new MarketPanel();
-            /*
             if (button == holdingsButton)
                 return new HoldingsPanel();
             if (button == watchlistButton)
@@ -175,7 +174,6 @@ namespace Punk_Stocks.Forms
                 return new AdminPanel();
             if (button == settingsButton)
                 return new SettingsPanel();
-            */
             return new DashboardPanel();
         }
 
@@ -232,7 +230,7 @@ namespace Punk_Stocks.Forms
 
         private void glossaryMenuItem_Click(object sender, EventArgs e)
         {
-            SetActiveButton(glossaryButton);
+            ShowPanel(glossaryButton);
         }
 
         private void aboutMenuItem_Click(object sender, EventArgs e)

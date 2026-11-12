@@ -28,9 +28,9 @@ namespace Punk_Stocks.Panels
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle priceCellStyle = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle volatilityCellStyle = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle yieldCellStyle = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleLabel = new System.Windows.Forms.Label();
             this.filterPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.searchLabel = new System.Windows.Forms.Label();
@@ -63,9 +63,9 @@ namespace Punk_Stocks.Panels
             this.tradeFlowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.SuspendLayout();
-            //
+            // 
             // titleLabel
-            //
+            // 
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
@@ -75,9 +75,9 @@ namespace Punk_Stocks.Panels
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Market";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //
+            // 
             // filterPanel
-            //
+            // 
             this.filterPanel.Controls.Add(this.searchLabel);
             this.filterPanel.Controls.Add(this.searchTextBox);
             this.filterPanel.Controls.Add(this.sectorLabel);
@@ -89,9 +89,9 @@ namespace Punk_Stocks.Panels
             this.filterPanel.Size = new System.Drawing.Size(900, 40);
             this.filterPanel.TabIndex = 1;
             this.filterPanel.WrapContents = false;
-            //
+            // 
             // searchLabel
-            //
+            // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Location = new System.Drawing.Point(15, 7);
             this.searchLabel.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
@@ -99,17 +99,17 @@ namespace Punk_Stocks.Panels
             this.searchLabel.Size = new System.Drawing.Size(44, 13);
             this.searchLabel.TabIndex = 0;
             this.searchLabel.Text = "Search:";
-            //
+            // 
             // searchTextBox
-            //
+            // 
             this.searchTextBox.Location = new System.Drawing.Point(65, 3);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(200, 20);
             this.searchTextBox.TabIndex = 1;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
-            //
+            // 
             // sectorLabel
-            //
+            // 
             this.sectorLabel.AutoSize = true;
             this.sectorLabel.Location = new System.Drawing.Point(288, 7);
             this.sectorLabel.Margin = new System.Windows.Forms.Padding(20, 7, 3, 0);
@@ -117,9 +117,9 @@ namespace Punk_Stocks.Panels
             this.sectorLabel.Size = new System.Drawing.Size(41, 13);
             this.sectorLabel.TabIndex = 2;
             this.sectorLabel.Text = "Sector:";
-            //
+            // 
             // sectorComboBox
-            //
+            // 
             this.sectorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sectorComboBox.FormattingEnabled = true;
             this.sectorComboBox.Location = new System.Drawing.Point(335, 3);
@@ -127,9 +127,9 @@ namespace Punk_Stocks.Panels
             this.sectorComboBox.Size = new System.Drawing.Size(180, 21);
             this.sectorComboBox.TabIndex = 3;
             this.sectorComboBox.SelectedIndexChanged += new System.EventHandler(this.sectorComboBox_SelectedIndexChanged);
-            //
+            // 
             // gridPanel
-            //
+            // 
             this.gridPanel.Controls.Add(this.stocksGrid);
             this.gridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridPanel.Location = new System.Drawing.Point(0, 100);
@@ -137,9 +137,9 @@ namespace Punk_Stocks.Panels
             this.gridPanel.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.gridPanel.Size = new System.Drawing.Size(900, 409);
             this.gridPanel.TabIndex = 2;
-            //
+            // 
             // stocksGrid
-            //
+            // 
             this.stocksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stocksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
@@ -155,60 +155,60 @@ namespace Punk_Stocks.Panels
             this.stocksGrid.Size = new System.Drawing.Size(870, 409);
             this.stocksGrid.TabIndex = 0;
             this.stocksGrid.SelectionChanged += new System.EventHandler(this.stocksGrid_SelectionChanged);
-            //
+            // 
             // idColumn
-            //
+            // 
             this.idColumn.DataPropertyName = "StockID";
             this.idColumn.HeaderText = "ID";
             this.idColumn.Name = "idColumn";
             this.idColumn.Visible = false;
-            //
+            // 
             // symbolColumn
-            //
+            // 
             this.symbolColumn.DataPropertyName = "Symbol";
             this.symbolColumn.FillWeight = 60F;
             this.symbolColumn.HeaderText = "Symbol";
             this.symbolColumn.Name = "symbolColumn";
-            //
+            // 
             // companyColumn
-            //
+            // 
             this.companyColumn.DataPropertyName = "CompanyName";
             this.companyColumn.FillWeight = 160F;
             this.companyColumn.HeaderText = "Company";
             this.companyColumn.Name = "companyColumn";
-            //
+            // 
             // sectorColumn
-            //
+            // 
             this.sectorColumn.DataPropertyName = "Sector";
             this.sectorColumn.HeaderText = "Sector";
             this.sectorColumn.Name = "sectorColumn";
-            //
+            // 
             // priceColumn
-            //
+            // 
             this.priceColumn.DataPropertyName = "CurrentPrice";
-            priceCellStyle.Format = "C2";
-            this.priceColumn.DefaultCellStyle = priceCellStyle;
+            dataGridViewCellStyle1.Format = "C2";
+            this.priceColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.priceColumn.HeaderText = "Price";
             this.priceColumn.Name = "priceColumn";
-            //
+            // 
             // volatilityColumn
-            //
+            // 
             this.volatilityColumn.DataPropertyName = "Volatility";
-            volatilityCellStyle.Format = "P2";
-            this.volatilityColumn.DefaultCellStyle = volatilityCellStyle;
+            dataGridViewCellStyle2.Format = "P2";
+            this.volatilityColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.volatilityColumn.HeaderText = "Volatility";
             this.volatilityColumn.Name = "volatilityColumn";
-            //
+            // 
             // yieldColumn
-            //
+            // 
             this.yieldColumn.DataPropertyName = "DividendYield";
-            yieldCellStyle.Format = "P2";
-            this.yieldColumn.DefaultCellStyle = yieldCellStyle;
+            dataGridViewCellStyle3.Format = "P2";
+            this.yieldColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.yieldColumn.HeaderText = "Dividend yield";
             this.yieldColumn.Name = "yieldColumn";
-            //
+            // 
             // tradePanel
-            //
+            // 
             this.tradePanel.Controls.Add(this.tradeFlowPanel);
             this.tradePanel.Controls.Add(this.descriptionLabel);
             this.tradePanel.Controls.Add(this.stockNameLabel);
@@ -218,9 +218,9 @@ namespace Punk_Stocks.Panels
             this.tradePanel.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.tradePanel.Size = new System.Drawing.Size(900, 145);
             this.tradePanel.TabIndex = 3;
-            //
+            // 
             // tradeFlowPanel
-            //
+            // 
             this.tradeFlowPanel.Controls.Add(this.quantityLabel);
             this.tradeFlowPanel.Controls.Add(this.quantityNumericUpDown);
             this.tradeFlowPanel.Controls.Add(this.buyButton);
@@ -233,9 +233,9 @@ namespace Punk_Stocks.Panels
             this.tradeFlowPanel.Size = new System.Drawing.Size(870, 45);
             this.tradeFlowPanel.TabIndex = 2;
             this.tradeFlowPanel.WrapContents = false;
-            //
+            // 
             // quantityLabel
-            //
+            // 
             this.quantityLabel.AutoSize = true;
             this.quantityLabel.Location = new System.Drawing.Point(3, 12);
             this.quantityLabel.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
@@ -243,9 +243,9 @@ namespace Punk_Stocks.Panels
             this.quantityLabel.Size = new System.Drawing.Size(49, 13);
             this.quantityLabel.TabIndex = 0;
             this.quantityLabel.Text = "Quantity:";
-            //
+            // 
             // quantityNumericUpDown
-            //
+            // 
             this.quantityNumericUpDown.Location = new System.Drawing.Point(58, 9);
             this.quantityNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 9, 15, 3);
             this.quantityNumericUpDown.Maximum = new decimal(new int[] {
@@ -267,43 +267,43 @@ namespace Punk_Stocks.Panels
             0,
             0});
             this.quantityNumericUpDown.ValueChanged += new System.EventHandler(this.quantityNumericUpDown_ValueChanged);
-            //
+            // 
             // buyButton
-            //
+            // 
             this.buyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(102)))), ((int)(((byte)(241)))));
             this.buyButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buyButton.FlatAppearance.BorderSize = 0;
             this.buyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buyButton.ForeColor = System.Drawing.Color.White;
-            this.buyButton.Location = new System.Drawing.Point(159, 3);
+            this.buyButton.Location = new System.Drawing.Point(156, 3);
             this.buyButton.Name = "buyButton";
             this.buyButton.Size = new System.Drawing.Size(100, 32);
             this.buyButton.TabIndex = 2;
             this.buyButton.Text = "Buy";
             this.buyButton.UseVisualStyleBackColor = false;
             this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
-            //
+            // 
             // sellButton
-            //
+            // 
             this.sellButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.sellButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sellButton.FlatAppearance.BorderSize = 0;
             this.sellButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sellButton.ForeColor = System.Drawing.Color.White;
-            this.sellButton.Location = new System.Drawing.Point(265, 3);
+            this.sellButton.Location = new System.Drawing.Point(262, 3);
             this.sellButton.Name = "sellButton";
             this.sellButton.Size = new System.Drawing.Size(100, 32);
             this.sellButton.TabIndex = 3;
             this.sellButton.Text = "Sell";
             this.sellButton.UseVisualStyleBackColor = false;
             this.sellButton.Click += new System.EventHandler(this.sellButton_Click);
-            //
+            // 
             // watchButton
-            //
+            // 
             this.watchButton.AutoSize = true;
             this.watchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.watchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchButton.Location = new System.Drawing.Point(371, 3);
+            this.watchButton.Location = new System.Drawing.Point(368, 3);
             this.watchButton.MinimumSize = new System.Drawing.Size(130, 32);
             this.watchButton.Name = "watchButton";
             this.watchButton.Size = new System.Drawing.Size(130, 32);
@@ -311,27 +311,27 @@ namespace Punk_Stocks.Panels
             this.watchButton.Text = "Add to watchlist";
             this.watchButton.UseVisualStyleBackColor = true;
             this.watchButton.Click += new System.EventHandler(this.watchButton_Click);
-            //
+            // 
             // estimateLabel
-            //
+            // 
             this.estimateLabel.AutoSize = true;
-            this.estimateLabel.Location = new System.Drawing.Point(519, 12);
+            this.estimateLabel.Location = new System.Drawing.Point(516, 12);
             this.estimateLabel.Margin = new System.Windows.Forms.Padding(15, 12, 3, 0);
             this.estimateLabel.Name = "estimateLabel";
             this.estimateLabel.Size = new System.Drawing.Size(0, 13);
             this.estimateLabel.TabIndex = 5;
-            //
+            // 
             // descriptionLabel
-            //
+            // 
             this.descriptionLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionLabel.ForeColor = System.Drawing.Color.DimGray;
             this.descriptionLabel.Location = new System.Drawing.Point(15, 38);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(870, 47);
             this.descriptionLabel.TabIndex = 1;
-            //
+            // 
             // stockNameLabel
-            //
+            // 
             this.stockNameLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.stockNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockNameLabel.Location = new System.Drawing.Point(15, 10);
@@ -339,9 +339,9 @@ namespace Punk_Stocks.Panels
             this.stockNameLabel.Size = new System.Drawing.Size(870, 28);
             this.stockNameLabel.TabIndex = 0;
             this.stockNameLabel.Text = "Select a stock";
-            //
+            // 
             // MarketPanel
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridPanel);
