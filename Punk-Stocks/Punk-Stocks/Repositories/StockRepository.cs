@@ -13,5 +13,10 @@ namespace Punk_Stocks.Repositories
                 return db.Stocks.AsNoTracking().OrderBy(s => s.Symbol).ToList();
             }
         }
+
+        public Stock Find(PunkStocksDBEntities db, int stockId)
+        {
+            return db.Stocks.Find(stockId);
+        }
     }
 }

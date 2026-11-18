@@ -206,6 +206,8 @@
     <Compile Include="Services\LanguageManager.cs" />
     <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\StockSeeder.cs" />
+    <Compile Include="Services\TradeResult.cs" />
+    <Compile Include="Services\TradeService.cs" />
     <Compile Include="Services\ValidationService.cs" />
     <Compile Include="Stock.cs">
       <DependentUpon>PunkStocksModel.tt</DependentUpon>

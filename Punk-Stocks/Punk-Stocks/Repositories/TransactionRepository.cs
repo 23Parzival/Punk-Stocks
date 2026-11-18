@@ -18,5 +18,10 @@ namespace Punk_Stocks.Repositories
                     .ToList();
             }
         }
+
+        public void Add(PunkStocksDBEntities db, Transaction transaction)
+        {
+            db.Transactions.Add(transaction);
+        }
     }
 }

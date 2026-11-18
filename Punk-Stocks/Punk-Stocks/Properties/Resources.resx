@@ -443,4 +443,22 @@ Simulated data and virtual money only.</value>
   <data name="Settings_ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
+  <data name="Trade_InvalidQuantity" xml:space="preserve">
+    <value>Quantity must be at least 1.</value>
+  </data>
+  <data name="Trade_NotFound" xml:space="preserve">
+    <value>The stock or user could not be found.</value>
+  </data>
+  <data name="Trade_NotEnoughCash" xml:space="preserve">
+    <value>Not enough cash. This trade costs {0} and you have {1}.</value>
+  </data>
+  <data name="Trade_NotEnoughShares" xml:space="preserve">
+    <value>You only own {0} shares of {1}.</value>
+  </data>
+  <data name="Trade_Bought" xml:space="preserve">
+    <value>Bought {0} shares of {1} for {2}.</value>
+  </data>
+  <data name="Trade_Sold" xml:space="preserve">
+    <value>Sold {0} shares of {1} for {2}.</value>
+  </data>
 </root>

@@ -17,5 +17,21 @@ namespace Punk_Stocks.Repositories
                     .ToList();
             }
         }
+
+        //these take the caller's db so a trade is saved in one SaveChanges
+        public Holding Find(PunkStocksDBEntities db, int userId, int stockId)
+        {
+            return db.Holdings.FirstOrDefault(h => h.UserID == userId && h.StockID == stockId);
+        }
+
+        public void Add(PunkStocksDBEntities db, Holding holding)
+        {
+            db.Holdings.Add(holding);
+        }
+
+        public void Remove(PunkStocksDBEntities db, Holding holding)
+        {
+            db.Holdings.Remove(holding);
+        }
     }
 }

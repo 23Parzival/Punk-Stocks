@@ -43,5 +43,10 @@ namespace Punk_Stocks.Repositories
                 db.SaveChanges();
             }
         }
+
+        public User Find(PunkStocksDBEntities db, int userId)
+        {
+            return db.Users.Find(userId);
+        }
     }
 }

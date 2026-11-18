@@ -1,3 +1,4 @@
+using Punk_Stocks.Models.Enums;
 using Punk_Stocks.Repositories;
 using Punk_Stocks.Services;
 using System;
@@ -12,6 +13,7 @@ namespace Punk_Stocks.Panels
     {
         private readonly StockRepository stockRepository = new StockRepository();
         private readonly WatchlistRepository watchlistRepository = new WatchlistRepository();
+        private readonly TradeService tradeService = new TradeService();
 
         private List<Stock> stocks = new List<Stock>();
         private List<string> sectors = new List<string>();
@@ -170,12 +172,54 @@ namespace Punk_Stocks.Panels
 
         private async void buyButton_Click(object sender, EventArgs e)
         {
-            //make trade
+            await MakeTrade(TransactionType.Buy);
         }
 
         private async void sellButton_Click(object sender, EventArgs e)
         {
-            //make trade
+            await MakeTrade(TransactionType.Sell);
+        }
+
+        private async Task MakeTrade(TransactionType type)
+        {
+            Stock stock = SelectedStock();
+            User user = SessionManager.CurrentUser;
+            if (stock == null || user == null)
+                return;
+
+            int quantity = (int)quantityNumericUpDown.Value;
+            string title = LanguageManager.Get(type == TransactionType.Buy ? "Market_Buy" : "Market_Sell");
+
+            //stop double clicks while the trade is saving
+            buyButton.Enabled = false;
+            sellButton.Enabled = false;
+
+            TradeResult result;
+            try
+            {
+                if (type == TransactionType.Buy)
+                    result = await Task.Run(() => tradeService.Buy(user.UserID, stock.StockID, quantity));
+                else
+                    result = await Task.Run(() => tradeService.Sell(user.UserID, stock.StockID, quantity));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(LanguageManager.Get("Error_Save") + "\n" + ex.Message, LanguageManager.Get("Error_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                UpdateSelection();
+            }
+
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SessionManager.UpdateCash(result.CashBalance);
+            MessageBox.Show(result.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private async void watchButton_Click(object sender, EventArgs e)

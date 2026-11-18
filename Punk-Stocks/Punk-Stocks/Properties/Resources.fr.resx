@@ -443,4 +443,22 @@ Données simulées et argent virtuel seulement.</value>
   <data name="Settings_ConfirmPassword" xml:space="preserve">
     <value>Confirmer le mot de passe</value>
   </data>
+  <data name="Trade_InvalidQuantity" xml:space="preserve">
+    <value>La quantité doit être d'au moins 1.</value>
+  </data>
+  <data name="Trade_NotFound" xml:space="preserve">
+    <value>L'action ou l'utilisateur est introuvable.</value>
+  </data>
+  <data name="Trade_NotEnoughCash" xml:space="preserve">
+    <value>Fonds insuffisants. Cette transaction coûte {0} et vous avez {1}.</value>
+  </data>
+  <data name="Trade_NotEnoughShares" xml:space="preserve">
+    <value>Vous ne possédez que {0} actions de {1}.</value>
+  </data>
+  <data name="Trade_Bought" xml:space="preserve">
+    <value>{0} actions de {1} achetées pour {2}.</value>
+  </data>
+  <data name="Trade_Sold" xml:space="preserve">
+    <value>{0} actions de {1} vendues pour {2}.</value>
+  </data>
 </root>
