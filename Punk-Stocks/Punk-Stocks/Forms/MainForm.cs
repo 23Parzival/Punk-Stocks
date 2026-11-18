@@ -16,9 +16,11 @@ namespace Punk_Stocks.Forms
         private static readonly Color ActiveColor = Color.FromArgb(99, 102, 241);
 
         private readonly UserRepository userRepository = new UserRepository();
+        private readonly PriceSimulator priceSimulator = new PriceSimulator();
         private readonly Dictionary<Button, UserControl> panels = new Dictionary<Button, UserControl>();
 
         private Button activeButton;
+        private bool simulating;
         public bool LogOutRequested { get; private set; }
 
         public MainForm()
@@ -37,10 +39,14 @@ namespace Punk_Stocks.Forms
             ApplyLanguage();
             clockLabel.Text = DateTime.Now.ToString("HH:mm:ss");
             ShowPanel(dashboardButton);
+
+            priceTimer.Interval = (int)PriceSimulator.TickInterval.TotalMilliseconds;
+            priceTimer.Start();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            priceTimer.Stop();
             SessionManager.CashChanged -= SessionManager_CashChanged;
             LanguageManager.LanguageChanged -= LanguageManager_LanguageChanged;
         }
@@ -122,6 +128,27 @@ namespace Punk_Stocks.Forms
         private void clockTimer_Tick(object sender, EventArgs e)
         {
             clockLabel.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private async void priceTimer_Tick(object sender, EventArgs e)
+        {
+            if (simulating)
+                return;
+
+            simulating = true;
+            try
+            {
+                await Task.Run(() => priceSimulator.Tick());
+                RefreshActivePanel();
+            }
+            catch (Exception)
+            {
+                //a failed tick is skipped. the next one tries again
+            }
+            finally
+            {
+                simulating = false;
+            }
         }
 
         //sidebar nav

@@ -67,6 +67,7 @@ namespace Punk_Stocks.Forms
             this.titleLabel = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.clockTimer = new System.Windows.Forms.Timer(this.components);
+            this.priceTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.sidebarPanel.SuspendLayout();
@@ -485,7 +486,12 @@ namespace Punk_Stocks.Forms
             this.clockTimer.Enabled = true;
             this.clockTimer.Interval = 1000;
             this.clockTimer.Tick += new System.EventHandler(this.clockTimer_Tick);
-            // 
+            //
+            // priceTimer
+            //
+            this.priceTimer.Interval = 10000;
+            this.priceTimer.Tick += new System.EventHandler(this.priceTimer_Tick);
+            //
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,6 +556,7 @@ namespace Punk_Stocks.Forms
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Timer clockTimer;
+        private System.Windows.Forms.Timer priceTimer;
         private System.Windows.Forms.Panel bottomSeparator;
     }
 }

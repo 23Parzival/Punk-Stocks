@@ -73,12 +73,17 @@ namespace Punk_Stocks.Panels
 
         private void FillSectors()
         {
+            //keep the chosen sector when prices refresh
+            string selectedSector = sectorComboBox.SelectedIndex > 0 ? (string)sectorComboBox.SelectedItem : null;
+
             fillingSectors = true;
             sectorComboBox.Items.Clear();
             sectorComboBox.Items.Add(LanguageManager.Get("Market_AllSectors"));
             foreach (string sector in sectors)
                 sectorComboBox.Items.Add(sector);
-            sectorComboBox.SelectedIndex = 0;
+
+            int index = selectedSector == null ? -1 : sectors.IndexOf(selectedSector);
+            sectorComboBox.SelectedIndex = index + 1;
             fillingSectors = false;
         }
 
@@ -87,6 +92,7 @@ namespace Punk_Stocks.Panels
             string search = searchTextBox.Text.Trim();
             string sector = sectorComboBox.SelectedIndex > 0 ? sectors[sectorComboBox.SelectedIndex - 1] : null;
             Stock selected = SelectedStock();
+            int firstRow = stocksGrid.FirstDisplayedScrollingRowIndex;
 
             stocksGrid.DataSource = stocks
                 .Where(s => sector == null || s.Sector == sector)
@@ -114,6 +120,10 @@ namespace Punk_Stocks.Panels
                     }
                 }
             }
+
+            //keep the scroll position when prices refresh
+            if (firstRow >= 0 && firstRow < stocksGrid.RowCount)
+                stocksGrid.FirstDisplayedScrollingRowIndex = firstRow;
 
             UpdateSelection();
         }

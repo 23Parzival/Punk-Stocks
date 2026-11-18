@@ -197,6 +197,7 @@
       <DependentUpon>PunkStocksModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Repositories\HoldingRepository.cs" />
+    <Compile Include="Repositories\PriceHistoryRepository.cs" />
     <Compile Include="Repositories\StockRepository.cs" />
     <Compile Include="Repositories\TransactionRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\LanguageManager.cs" />
     <Compile Include="Services\SessionManager.cs" />
+    <Compile Include="Services\PriceSimulator.cs" />
     <Compile Include="Services\StockSeeder.cs" />
     <Compile Include="Services\TradeResult.cs" />
     <Compile Include="Services\TradeService.cs" />
