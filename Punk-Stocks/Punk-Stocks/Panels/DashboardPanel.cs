@@ -1,3 +1,4 @@
+using Punk_Stocks.Models.Enums;
 using Punk_Stocks.Repositories;
 using Punk_Stocks.Services;
 using System;
@@ -70,7 +71,7 @@ namespace Punk_Stocks.Panels
             recentGrid.DataSource = recent.Select(t => new
             {
                 t.ExecutedAt,
-                t.TransactionType,
+                Type = LanguageManager.Get(t.TransactionType == (int)TransactionType.Buy ? "Market_Buy" : "Market_Sell"),
                 t.Stock.Symbol,
                 t.Quantity,
                 t.PricePerShare,
