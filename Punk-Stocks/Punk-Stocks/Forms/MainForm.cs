@@ -39,9 +39,7 @@ namespace Punk_Stocks.Forms
             ApplyLanguage();
             clockLabel.Text = DateTime.Now.ToString("HH:mm:ss");
             ShowPanel(dashboardButton);
-
-            priceTimer.Interval = (int)PriceSimulator.TickInterval.TotalMilliseconds;
-            priceTimer.Start();
+            StartPriceSimulation();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -128,6 +126,28 @@ namespace Punk_Stocks.Forms
         private void clockTimer_Tick(object sender, EventArgs e)
         {
             clockLabel.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        //catches up the time the app was closed, then starts the timer
+        private async void StartPriceSimulation()
+        {
+            simulating = true;
+            try
+            {
+                await Task.Run(() => priceSimulator.CatchUp());
+                RefreshActivePanel();
+            }
+            catch (Exception ex)
+            {
+                PanelStyle.ShowLoadError(ex);
+            }
+            finally
+            {
+                simulating = false;
+            }
+
+            priceTimer.Interval = (int)PriceSimulator.TickInterval.TotalMilliseconds;
+            priceTimer.Start();
         }
 
         private async void priceTimer_Tick(object sender, EventArgs e)
