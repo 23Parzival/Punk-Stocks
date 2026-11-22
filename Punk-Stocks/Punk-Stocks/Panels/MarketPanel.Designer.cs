@@ -253,19 +253,9 @@ namespace Punk_Stocks.Panels
             0,
             0,
             0});
-            this.quantityNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.quantityNumericUpDown.Name = "quantityNumericUpDown";
             this.quantityNumericUpDown.Size = new System.Drawing.Size(80, 20);
             this.quantityNumericUpDown.TabIndex = 1;
-            this.quantityNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.quantityNumericUpDown.ValueChanged += new System.EventHandler(this.quantityNumericUpDown_ValueChanged);
             // 
             // buyButton

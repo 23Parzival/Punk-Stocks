@@ -65,6 +65,14 @@ namespace Punk_Stocks.Panels
             //reports are only built when Generate is clicked (for now)
         }
 
+        //clear the report when going to another panel
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
+            if (!Visible)
+                reportGrid.DataSource = null;
+        }
+
         private async void generateButton_Click(object sender, EventArgs e)
         {
             User user = SessionManager.CurrentUser;

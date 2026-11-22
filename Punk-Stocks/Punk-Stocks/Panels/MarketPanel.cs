@@ -142,8 +142,10 @@ namespace Punk_Stocks.Panels
             Stock stock = SelectedStock();
             bool hasStock = stock != null;
 
-            buyButton.Enabled = hasStock;
-            sellButton.Enabled = hasStock;
+            //no trading 0 shares
+            bool hasQuantity = quantityNumericUpDown.Value > 0;
+            buyButton.Enabled = hasStock && hasQuantity;
+            sellButton.Enabled = hasStock && hasQuantity;
             watchButton.Enabled = hasStock;
 
             if (!hasStock)
@@ -229,6 +231,7 @@ namespace Punk_Stocks.Panels
             }
 
             SessionManager.UpdateCash(result.CashBalance);
+            quantityNumericUpDown.Value = 0;
             MessageBox.Show(result.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
