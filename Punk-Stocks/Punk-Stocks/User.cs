@@ -32,6 +32,7 @@ namespace Punk_Stocks
         public int Language { get; set; }
         public bool IsAdmin { get; set; }
         public System.DateTime CreatedAt { get; set; }
+        public decimal StartingCash { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alert> Alerts { get; set; }

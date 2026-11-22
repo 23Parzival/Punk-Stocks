@@ -432,10 +432,25 @@ Données simulées et argent virtuel seulement.</value>
     <value>Rechercher</value>
   </data>
   <data name="Admin_ResetCash" xml:space="preserve">
-    <value>Réinitialiser l'argent</value>
+    <value>Réinitialiser le compte</value>
   </data>
   <data name="Admin_DeleteUser" xml:space="preserve">
     <value>Supprimer l'utilisateur</value>
+  </data>
+  <data name="Admin_ConfirmReset" xml:space="preserve">
+    <value>Réinitialiser {0}? Tous ses placements, transactions, sa liste de suivi et ses alertes seront supprimés et son argent remis au montant de départ.</value>
+  </data>
+  <data name="Admin_ResetDone" xml:space="preserve">
+    <value>{0} a été réinitialisé. Argent : {1}</value>
+  </data>
+  <data name="Admin_ConfirmDelete" xml:space="preserve">
+    <value>Supprimer {0} et toutes ses données? Cette action est irréversible.</value>
+  </data>
+  <data name="Admin_CannotDeleteSelf" xml:space="preserve">
+    <value>Vous ne pouvez pas supprimer votre propre compte.</value>
+  </data>
+  <data name="Admin_CannotDeleteAdmin" xml:space="preserve">
+    <value>Les comptes administrateurs ne peuvent pas être supprimés.</value>
   </data>
   <data name="Settings_Preferences" xml:space="preserve">
     <value>Préférences</value>

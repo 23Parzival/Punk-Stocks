@@ -8,7 +8,7 @@
           <mxGeometry height="30" width="305" x="347.5" y="11" as="geometry" />
         </mxCell>
         <mxCell id="t_users" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Users" vertex="1">
-          <mxGeometry height="234" width="200" x="400" y="60" as="geometry" />
+          <mxGeometry height="260" width="200" x="400" y="60" as="geometry" />
         </mxCell>
         <mxCell id="u_id" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="PK UserID" vertex="1">
           <mxGeometry height="26" width="200" y="26" as="geometry" />
@@ -33,6 +33,9 @@
         </mxCell>
         <mxCell id="u_created" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="CreatedAt" vertex="1">
           <mxGeometry height="26" width="200" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="u_start" parent="t_users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;html=1;fontSize=14;" value="StartingCash" vertex="1">
+          <mxGeometry height="26" width="200" y="234" as="geometry" />
         </mxCell>
         <mxCell id="t_stocks" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=26;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Stocks" vertex="1">
           <mxGeometry height="234" width="200" x="400" y="340" as="geometry" />

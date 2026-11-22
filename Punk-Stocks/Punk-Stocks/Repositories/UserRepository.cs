@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Punk_Stocks.Repositories
@@ -74,6 +75,49 @@ namespace Punk_Stocks.Repositories
                     return;
 
                 user.PasswordHash = passwordHash;
+                db.SaveChanges();
+            }
+        }
+
+        public List<User> GetAll()
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                return db.Users.AsNoTracking().OrderBy(u => u.UserID).ToList();
+            }
+        }
+
+        //deletes everything the user owns and gives back their starting cash. returns the new cash, or null if the user is gone
+        public decimal? ResetAccount(int userId)
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                User user = db.Users.Find(userId);
+                if (user == null)
+                    return null;
+
+                db.Transactions.RemoveRange(db.Transactions.Where(t => t.UserID == userId));
+                db.Dividends.RemoveRange(db.Dividends.Where(d => d.UserID == userId));
+                db.Holdings.RemoveRange(db.Holdings.Where(h => h.UserID == userId));
+                db.WatchlistItems.RemoveRange(db.WatchlistItems.Where(w => w.UserID == userId));
+                db.Alerts.RemoveRange(db.Alerts.Where(a => a.UserID == userId));
+
+                user.CashBalance = user.StartingCash;
+                db.SaveChanges();
+                return user.StartingCash;
+            }
+        }
+
+        //the database deletes the user (cascade)
+        public void Delete(int userId)
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                User user = db.Users.Find(userId);
+                if (user == null)
+                    return;
+
+                db.Users.Remove(user);
                 db.SaveChanges();
             }
         }

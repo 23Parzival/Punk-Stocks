@@ -25,6 +25,7 @@ namespace Punk_Stocks.Services
                 Username = username,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(password, WorkFactor),
                 CashBalance = startingCash,
+                StartingCash = startingCash,
                 Theme = (int)AppTheme.Light,
                 Language = (int)AppLanguage.English,
                 IsAdmin = false,

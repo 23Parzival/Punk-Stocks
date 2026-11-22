@@ -6,7 +6,8 @@ CREATE TABLE Users (
     Theme INT NOT NULL DEFAULT 0, -- 0 = Light, 1 = Dark
     Language INT NOT NULL DEFAULT 0, -- 0 = English, 1 = French
     IsAdmin BIT NOT NULL DEFAULT 0,
-    CreatedAt DATETIME2 NOT NULL DEFAULT GETDATE()
+    CreatedAt DATETIME2 NOT NULL DEFAULT GETDATE(),
+    StartingCash DECIMAL(18,2) NOT NULL DEFAULT 0
 );
 
 CREATE TABLE Stocks (
