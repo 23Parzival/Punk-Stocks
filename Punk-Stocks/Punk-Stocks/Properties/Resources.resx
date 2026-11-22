@@ -461,4 +461,19 @@ Simulated data and virtual money only.</value>
   <data name="Trade_Sold" xml:space="preserve">
     <value>Sold {0} shares of {1} for {2}.</value>
   </data>
+  <data name="Settings_ChangeUsername" xml:space="preserve">
+    <value>Change username</value>
+  </data>
+  <data name="Settings_NewUsername" xml:space="preserve">
+    <value>New username</value>
+  </data>
+  <data name="Settings_UsernameChanged" xml:space="preserve">
+    <value>Your username is now {0}.</value>
+  </data>
+  <data name="Settings_PasswordChanged" xml:space="preserve">
+    <value>Your password has been changed.</value>
+  </data>
+  <data name="Auth_WrongPassword" xml:space="preserve">
+    <value>The current password is incorrect.</value>
+  </data>
 </root>

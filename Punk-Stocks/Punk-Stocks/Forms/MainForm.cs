@@ -88,7 +88,8 @@ namespace Punk_Stocks.Forms
             ApplyLanguage();
         }
 
-        private async void ChangeLanguage(AppLanguage language)
+        //internal so the settings panel can use it too
+        internal async void ChangeLanguage(AppLanguage language)
         {
             User user = SessionManager.CurrentUser;
             if (user == null || LanguageManager.Current == language)

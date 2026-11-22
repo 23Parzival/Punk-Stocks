@@ -44,6 +44,40 @@ namespace Punk_Stocks.Repositories
             }
         }
 
+        public User GetById(int userId)
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                return db.Users.AsNoTracking().FirstOrDefault(u => u.UserID == userId);
+            }
+        }
+
+        public void UpdateUsername(int userId, string username)
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                User user = db.Users.Find(userId);
+                if (user == null)
+                    return;
+
+                user.Username = username;
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdatePassword(int userId, string passwordHash)
+        {
+            using (var db = new PunkStocksDBEntities())
+            {
+                User user = db.Users.Find(userId);
+                if (user == null)
+                    return;
+
+                user.PasswordHash = passwordHash;
+                db.SaveChanges();
+            }
+        }
+
         public User Find(PunkStocksDBEntities db, int userId)
         {
             return db.Users.Find(userId);

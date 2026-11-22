@@ -50,5 +50,43 @@ namespace Punk_Stocks.Services
 
             return AuthResult.Ok(user);
         }
+
+        public AuthResult ChangeUsername(int userId, string newUsername)
+        {
+            newUsername = (newUsername ?? "").Trim();
+
+            string error = ValidationService.ValidateUsername(newUsername);
+            if (error != null)
+                return AuthResult.Fail(error);
+
+            if (users.UsernameExists(newUsername))
+                return AuthResult.Fail(LanguageManager.Get("Auth_UsernameTaken"));
+
+            User user = users.GetById(userId);
+            if (user == null)
+                return AuthResult.Fail(LanguageManager.Get("Auth_InvalidCredentials"));
+
+            users.UpdateUsername(userId, newUsername);
+            user.Username = newUsername;
+            return AuthResult.Ok(user);
+        }
+
+        public AuthResult ChangePassword(int userId, string currentPassword, string newPassword)
+        {
+            currentPassword = currentPassword ?? "";
+            newPassword = newPassword ?? "";
+
+            User user = users.GetById(userId);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(currentPassword, user.PasswordHash))
+                return AuthResult.Fail(LanguageManager.Get("Auth_WrongPassword"));
+
+            string error = ValidationService.ValidatePassword(newPassword);
+            if (error != null)
+                return AuthResult.Fail(error);
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newPassword, WorkFactor);
+            users.UpdatePassword(userId, user.PasswordHash);
+            return AuthResult.Ok(user);
+        }
     }
 }

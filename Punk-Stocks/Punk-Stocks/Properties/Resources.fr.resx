@@ -461,4 +461,19 @@ Données simulées et argent virtuel seulement.</value>
   <data name="Trade_Sold" xml:space="preserve">
     <value>{0} actions de {1} vendues pour {2}.</value>
   </data>
+  <data name="Settings_ChangeUsername" xml:space="preserve">
+    <value>Changer le nom d'utilisateur</value>
+  </data>
+  <data name="Settings_NewUsername" xml:space="preserve">
+    <value>Nouveau nom d'utilisateur</value>
+  </data>
+  <data name="Settings_UsernameChanged" xml:space="preserve">
+    <value>Votre nom d'utilisateur est maintenant {0}.</value>
+  </data>
+  <data name="Settings_PasswordChanged" xml:space="preserve">
+    <value>Votre mot de passe a été changé.</value>
+  </data>
+  <data name="Auth_WrongPassword" xml:space="preserve">
+    <value>Le mot de passe actuel est incorrect.</value>
+  </data>
 </root>

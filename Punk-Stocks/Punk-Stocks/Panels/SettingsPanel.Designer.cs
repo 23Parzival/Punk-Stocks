@@ -71,7 +71,6 @@ namespace Punk_Stocks.Panels
             this.bodyPanel.Controls.Add(this.usernameGroupBox);
             this.bodyPanel.Controls.Add(this.passwordGroupBox);
             this.bodyPanel.Controls.Add(this.preferencesGroupBox);
-            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bodyPanel.Location = new System.Drawing.Point(0, 60);
             this.bodyPanel.Name = "bodyPanel";
             this.bodyPanel.Size = new System.Drawing.Size(900, 594);
