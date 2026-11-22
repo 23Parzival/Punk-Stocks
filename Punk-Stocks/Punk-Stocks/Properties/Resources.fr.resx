@@ -413,6 +413,21 @@ Données simulées et argent virtuel seulement.</value>
   <data name="Reports_ProfitLoss" xml:space="preserve">
     <value>Gains et pertes par action</value>
   </data>
+  <data name="Reports_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Column_Stocks" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Column_Weight" xml:space="preserve">
+    <value>% du portefeuille</value>
+  </data>
+  <data name="Column_Realized" xml:space="preserve">
+    <value>Réalisé</value>
+  </data>
+  <data name="Column_Unrealized" xml:space="preserve">
+    <value>Non réalisé</value>
+  </data>
   <data name="Glossary_Search" xml:space="preserve">
     <value>Rechercher</value>
   </data>

@@ -413,6 +413,21 @@ Simulated data and virtual money only.</value>
   <data name="Reports_ProfitLoss" xml:space="preserve">
     <value>Profit and loss by stock</value>
   </data>
+  <data name="Reports_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Column_Stocks" xml:space="preserve">
+    <value>Stocks</value>
+  </data>
+  <data name="Column_Weight" xml:space="preserve">
+    <value>% of Portfolio</value>
+  </data>
+  <data name="Column_Realized" xml:space="preserve">
+    <value>Realized</value>
+  </data>
+  <data name="Column_Unrealized" xml:space="preserve">
+    <value>Unrealized</value>
+  </data>
   <data name="Glossary_Search" xml:space="preserve">
     <value>Search</value>
   </data>

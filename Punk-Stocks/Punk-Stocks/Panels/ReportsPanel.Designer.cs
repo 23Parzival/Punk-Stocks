@@ -109,6 +109,7 @@ namespace Punk_Stocks.Panels
             this.reportGrid.Name = "reportGrid";
             this.reportGrid.Size = new System.Drawing.Size(870, 529);
             this.reportGrid.TabIndex = 0;
+            this.reportGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.reportGrid_CellFormatting);
             // 
             // ReportsPanel
             // 
