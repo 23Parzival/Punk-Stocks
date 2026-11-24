@@ -362,6 +362,9 @@ Simulated data and virtual money only.</value>
   <data name="Market_Sell" xml:space="preserve">
     <value>Sell</value>
   </data>
+  <data name="History_Dividend" xml:space="preserve">
+    <value>Dividend</value>
+  </data>
   <data name="Market_Watch" xml:space="preserve">
     <value>Add to watchlist</value>
   </data>

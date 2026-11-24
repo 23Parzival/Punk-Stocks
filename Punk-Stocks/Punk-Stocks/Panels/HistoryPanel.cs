@@ -12,6 +12,7 @@ namespace Punk_Stocks.Panels
     public partial class HistoryPanel : UserControl, IContentPanel
     {
         private readonly TransactionRepository transactionRepository = new TransactionRepository();
+        private readonly DividendRepository dividendRepository = new DividendRepository();
 
         public HistoryPanel()
         {
@@ -39,9 +40,11 @@ namespace Punk_Stocks.Panels
                 return;
 
             List<Transaction> transactions;
+            List<Dividend> dividends;
             try
             {
                 transactions = await Task.Run(() => transactionRepository.GetRecent(user.UserID, int.MaxValue));
+                dividends = await Task.Run(() => dividendRepository.GetForUser(user.UserID));
             }
             catch (Exception ex)
             {
@@ -49,15 +52,27 @@ namespace Punk_Stocks.Panels
                 return;
             }
 
-            historyGrid.DataSource = transactions.Select(t => new
+            //trades and dividends in one list, newest first. dividends have no quantity or price, so those are left blank
+            var trades = transactions.Select(t => new
             {
-                t.ExecutedAt,
+                ExecutedAt = t.ExecutedAt,
                 Type = LanguageManager.Get(t.TransactionType == (int)TransactionType.Buy ? "Market_Buy" : "Market_Sell"),
-                t.Stock.Symbol,
-                t.Quantity,
-                t.PricePerShare,
+                Symbol = t.Stock.Symbol,
+                Quantity = (int?)t.Quantity,
+                PricePerShare = (decimal?)t.PricePerShare,
                 Total = t.PricePerShare * t.Quantity
-            }).ToList();
+            });
+            var payouts = dividends.Select(d => new
+            {
+                ExecutedAt = d.PaidAt,
+                Type = LanguageManager.Get("History_Dividend"),
+                Symbol = d.Stock.Symbol,
+                Quantity = (int?)null,
+                PricePerShare = (decimal?)null,
+                Total = d.Amount
+            });
+
+            historyGrid.DataSource = trades.Concat(payouts).OrderByDescending(r => r.ExecutedAt).ToList();
         }
     }
 }

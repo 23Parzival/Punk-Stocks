@@ -29,16 +29,20 @@ namespace Punk_Stocks.Services
 
         private readonly StockRepository stockRepository = new StockRepository();
         private readonly PriceHistoryRepository historyRepository = new PriceHistoryRepository();
+        private readonly DividendService dividendService = new DividendService();
         private readonly Random random = new Random();
 
         private DateTime lastHistory = DateTime.MinValue;
         private DateTime lastCleanup = DateTime.MinValue;
+        private DateTime lastDividendCheck = DateTime.MinValue;
 
         //replays the ticks missed while the app was closed (up to MaxCatchUp)
-        public void CatchUp()
+        //returns true if dividends were paid
+        public bool CatchUp()
         {
             DateTime now = DateTime.Now;
             DateTime? lastRecorded = historyRepository.GetLastRecorded();
+            bool dividendsPaid = false;
 
             if (lastRecorded.HasValue)
             {
@@ -47,14 +51,20 @@ namespace Punk_Stocks.Services
 
                 if (tickCount > 0)
                     Simulate(start, tickCount, CatchUpHistoryInterval);
+
+                //dividends that came due while the app was closed
+                dividendsPaid = dividendService.PayDue(start, now);
             }
 
             lastHistory = now;
+            lastDividendCheck = now;
             Cleanup(now);
+            return dividendsPaid;
         }
 
         //runs every TickInterval while the app is open
-        public void Tick()
+        //returns true if dividends were paid
+        public bool Tick()
         {
             DateTime now = DateTime.Now;
             bool recordHistory = now - lastHistory >= HistoryInterval;
@@ -79,6 +89,14 @@ namespace Punk_Stocks.Services
 
             if (now - lastCleanup >= CleanupInterval)
                 Cleanup(now);
+
+            //if CatchUp never ran, start counting from now instead of paying from year 1
+            if (lastDividendCheck == DateTime.MinValue)
+                lastDividendCheck = now;
+
+            bool dividendsPaid = dividendService.PayDue(lastDividendCheck, now);
+            lastDividendCheck = now;
+            return dividendsPaid;
         }
 
         private void Simulate(DateTime start, long tickCount, TimeSpan historyInterval)

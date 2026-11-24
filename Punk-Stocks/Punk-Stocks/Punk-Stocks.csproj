@@ -196,6 +196,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PunkStocksModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\DividendRepository.cs" />
     <Compile Include="Repositories\HoldingRepository.cs" />
     <Compile Include="Repositories\PriceHistoryRepository.cs" />
     <Compile Include="Repositories\StockRepository.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Repositories\WatchlistRepository.cs" />
     <Compile Include="Services\AuthResult.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\DividendService.cs" />
     <Compile Include="Services\LanguageManager.cs" />
     <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\PriceSimulator.cs" />

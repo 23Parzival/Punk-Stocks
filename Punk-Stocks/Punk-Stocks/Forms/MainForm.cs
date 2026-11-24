@@ -135,7 +135,9 @@ namespace Punk_Stocks.Forms
             simulating = true;
             try
             {
-                await Task.Run(() => priceSimulator.CatchUp());
+                bool dividendsPaid = await Task.Run(() => priceSimulator.CatchUp());
+                if (dividendsPaid)
+                    await ReloadCash();
                 RefreshActivePanel();
             }
             catch (Exception ex)
@@ -159,7 +161,9 @@ namespace Punk_Stocks.Forms
             simulating = true;
             try
             {
-                await Task.Run(() => priceSimulator.Tick());
+                bool dividendsPaid = await Task.Run(() => priceSimulator.Tick());
+                if (dividendsPaid)
+                    await ReloadCash();
                 RefreshActivePanel();
             }
             catch (Exception)
@@ -170,6 +174,17 @@ namespace Punk_Stocks.Forms
             {
                 simulating = false;
             }
+        }
+
+        private async Task ReloadCash()
+        {
+            User user = SessionManager.CurrentUser;
+            if (user == null)
+                return;
+
+            User saved = await Task.Run(() => userRepository.GetById(user.UserID));
+            if (saved != null)
+                SessionManager.UpdateCash(saved.CashBalance);
         }
 
         //sidebar nav

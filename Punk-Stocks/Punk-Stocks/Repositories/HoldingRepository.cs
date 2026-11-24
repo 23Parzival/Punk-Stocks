@@ -19,6 +19,11 @@ namespace Punk_Stocks.Repositories
         }
 
         //these take the caller's db so a trade is saved in one SaveChanges
+        public List<Holding> GetAll(PunkStocksDBEntities db)
+        {
+            return db.Holdings.Include(h => h.Stock).Include(h => h.User).ToList();
+        }
+
         public Holding Find(PunkStocksDBEntities db, int userId, int stockId)
         {
             return db.Holdings.FirstOrDefault(h => h.UserID == userId && h.StockID == stockId);

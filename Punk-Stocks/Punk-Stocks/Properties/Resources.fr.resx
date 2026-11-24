@@ -362,6 +362,9 @@ Données simulées et argent virtuel seulement.</value>
   <data name="Market_Sell" xml:space="preserve">
     <value>Vendre</value>
   </data>
+  <data name="History_Dividend" xml:space="preserve">
+    <value>Dividende</value>
+  </data>
   <data name="Market_Watch" xml:space="preserve">
     <value>Ajouter à la liste de suivi</value>
   </data>
