@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Punk_Stocks.Properties
-{
-
-
+namespace Punk_Stocks.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,1216 @@ namespace Punk_Stocks.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Punk_Stocks.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Punk-Stocks v1.0
+        ///A stock market simulator for new investors.
+        ///Simulated data and virtual money only..
+        /// </summary>
+        internal static string About_Message {
+            get {
+                return ResourceManager.GetString("About_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Punk-Stocks.
+        /// </summary>
+        internal static string About_Title {
+            get {
+                return ResourceManager.GetString("About_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin accounts cannot be deleted..
+        /// </summary>
+        internal static string Admin_CannotDeleteAdmin {
+            get {
+                return ResourceManager.GetString("Admin_CannotDeleteAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot delete your own account..
+        /// </summary>
+        internal static string Admin_CannotDeleteSelf {
+            get {
+                return ResourceManager.GetString("Admin_CannotDeleteSelf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete {0} and all their data? This cannot be undone..
+        /// </summary>
+        internal static string Admin_ConfirmDelete {
+            get {
+                return ResourceManager.GetString("Admin_ConfirmDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset {0}? All their holdings, transactions, watchlist and alerts will be deleted and their cash set back to the starting amount..
+        /// </summary>
+        internal static string Admin_ConfirmReset {
+            get {
+                return ResourceManager.GetString("Admin_ConfirmReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete user.
+        /// </summary>
+        internal static string Admin_DeleteUser {
+            get {
+                return ResourceManager.GetString("Admin_DeleteUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset account.
+        /// </summary>
+        internal static string Admin_ResetCash {
+            get {
+                return ResourceManager.GetString("Admin_ResetCash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} was reset. Cash: {1}.
+        /// </summary>
+        internal static string Admin_ResetDone {
+            get {
+                return ResourceManager.GetString("Admin_ResetDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid username or password..
+        /// </summary>
+        internal static string Auth_InvalidCredentials {
+            get {
+                return ResourceManager.GetString("Auth_InvalidCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your username and password..
+        /// </summary>
+        internal static string Auth_MissingCredentials {
+            get {
+                return ResourceManager.GetString("Auth_MissingCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to That username is already taken..
+        /// </summary>
+        internal static string Auth_UsernameTaken {
+            get {
+                return ResourceManager.GetString("Auth_UsernameTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current password is incorrect..
+        /// </summary>
+        internal static string Auth_WrongPassword {
+            get {
+                return ResourceManager.GetString("Auth_WrongPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avg. cost.
+        /// </summary>
+        internal static string Column_AvgCost {
+            get {
+                return ResourceManager.GetString("Column_AvgCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash.
+        /// </summary>
+        internal static string Column_Cash {
+            get {
+                return ResourceManager.GetString("Column_Cash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company.
+        /// </summary>
+        internal static string Column_Company {
+            get {
+                return ResourceManager.GetString("Column_Company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        internal static string Column_CreatedAt {
+            get {
+                return ResourceManager.GetString("Column_CreatedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        internal static string Column_Date {
+            get {
+                return ResourceManager.GetString("Column_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dividend yield.
+        /// </summary>
+        internal static string Column_DividendYield {
+            get {
+                return ResourceManager.GetString("Column_DividendYield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        internal static string Column_ID {
+            get {
+                return ResourceManager.GetString("Column_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        internal static string Column_IsAdmin {
+            get {
+                return ResourceManager.GetString("Column_IsAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Market value.
+        /// </summary>
+        internal static string Column_MarketValue {
+            get {
+                return ResourceManager.GetString("Column_MarketValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        internal static string Column_Price {
+            get {
+                return ResourceManager.GetString("Column_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit.
+        /// </summary>
+        internal static string Column_Profit {
+            get {
+                return ResourceManager.GetString("Column_Profit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        internal static string Column_Quantity {
+            get {
+                return ResourceManager.GetString("Column_Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Realized.
+        /// </summary>
+        internal static string Column_Realized {
+            get {
+                return ResourceManager.GetString("Column_Realized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sector.
+        /// </summary>
+        internal static string Column_Sector {
+            get {
+                return ResourceManager.GetString("Column_Sector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stocks.
+        /// </summary>
+        internal static string Column_Stocks {
+            get {
+                return ResourceManager.GetString("Column_Stocks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Symbol.
+        /// </summary>
+        internal static string Column_Symbol {
+            get {
+                return ResourceManager.GetString("Column_Symbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        internal static string Column_Total {
+            get {
+                return ResourceManager.GetString("Column_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string Column_Type {
+            get {
+                return ResourceManager.GetString("Column_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unrealized.
+        /// </summary>
+        internal static string Column_Unrealized {
+            get {
+                return ResourceManager.GetString("Column_Unrealized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volatility.
+        /// </summary>
+        internal static string Column_Volatility {
+            get {
+                return ResourceManager.GetString("Column_Volatility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to % of Portfolio.
+        /// </summary>
+        internal static string Column_Weight {
+            get {
+                return ResourceManager.GetString("Column_Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        internal static string Common_Password {
+            get {
+                return ResourceManager.GetString("Common_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username:.
+        /// </summary>
+        internal static string Common_Username {
+            get {
+                return ResourceManager.GetString("Common_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string CreateUser_Back {
+            get {
+                return ResourceManager.GetString("CreateUser_Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Password:.
+        /// </summary>
+        internal static string CreateUser_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("CreateUser_ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Account.
+        /// </summary>
+        internal static string CreateUser_Create {
+            get {
+                return ResourceManager.GetString("CreateUser_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not create the account:.
+        /// </summary>
+        internal static string CreateUser_Error {
+            get {
+                return ResourceManager.GetString("CreateUser_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account not created.
+        /// </summary>
+        internal static string CreateUser_FailedTitle {
+            get {
+                return ResourceManager.GetString("CreateUser_FailedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Already a user? Click here to login..
+        /// </summary>
+        internal static string CreateUser_LoginLink {
+            get {
+                return ResourceManager.GetString("CreateUser_LoginLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your information to create a new Punk-Stocks account:.
+        /// </summary>
+        internal static string CreateUser_Prompt {
+            get {
+                return ResourceManager.GetString("CreateUser_Prompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting Cash Balance:.
+        /// </summary>
+        internal static string CreateUser_StartingCash {
+            get {
+                return ResourceManager.GetString("CreateUser_StartingCash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account created! You can now log in..
+        /// </summary>
+        internal static string CreateUser_Success {
+            get {
+                return ResourceManager.GetString("CreateUser_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to Punk-Stocks.
+        /// </summary>
+        internal static string CreateUser_SuccessTitle {
+            get {
+                return ResourceManager.GetString("CreateUser_SuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Punk-Stocks Account Creation.
+        /// </summary>
+        internal static string CreateUser_Title {
+            get {
+                return ResourceManager.GetString("CreateUser_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash.
+        /// </summary>
+        internal static string Dashboard_Cash {
+            get {
+                return ResourceManager.GetString("Dashboard_Cash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holdings value.
+        /// </summary>
+        internal static string Dashboard_HoldingsValue {
+            get {
+                return ResourceManager.GetString("Dashboard_HoldingsValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Net worth.
+        /// </summary>
+        internal static string Dashboard_NetWorth {
+            get {
+                return ResourceManager.GetString("Dashboard_NetWorth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit.
+        /// </summary>
+        internal static string Dashboard_Profit {
+            get {
+                return ResourceManager.GetString("Dashboard_Profit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recent transactions.
+        /// </summary>
+        internal static string Dashboard_Recent {
+            get {
+                return ResourceManager.GetString("Dashboard_Recent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not load the data:.
+        /// </summary>
+        internal static string Error_Load {
+            get {
+                return ResourceManager.GetString("Error_Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not save the changes:.
+        /// </summary>
+        internal static string Error_Save {
+            get {
+                return ResourceManager.GetString("Error_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error_Title {
+            get {
+                return ResourceManager.GetString("Error_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string Glossary_Search {
+            get {
+                return ResourceManager.GetString("Glossary_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log In.
+        /// </summary>
+        internal static string Login_Button {
+            get {
+                return ResourceManager.GetString("Login_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not a user? Click here to create an account..
+        /// </summary>
+        internal static string Login_CreateLink {
+            get {
+                return ResourceManager.GetString("Login_CreateLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not log in:.
+        /// </summary>
+        internal static string Login_Error {
+            get {
+                return ResourceManager.GetString("Login_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string Login_Exit {
+            get {
+                return ResourceManager.GetString("Login_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login failed.
+        /// </summary>
+        internal static string Login_FailedTitle {
+            get {
+                return ResourceManager.GetString("Login_FailedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log In using your Punk-Stocks account:.
+        /// </summary>
+        internal static string Login_Prompt {
+            get {
+                return ResourceManager.GetString("Login_Prompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not load the stock market data:.
+        /// </summary>
+        internal static string Login_SeedError {
+            get {
+                return ResourceManager.GetString("Login_SeedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Punk-Stocks Login.
+        /// </summary>
+        internal static string Login_Title {
+            get {
+                return ResourceManager.GetString("Login_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All sectors.
+        /// </summary>
+        internal static string Market_AllSectors {
+            get {
+                return ResourceManager.GetString("Market_AllSectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buy.
+        /// </summary>
+        internal static string Market_Buy {
+            get {
+                return ResourceManager.GetString("Market_Buy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estimated total: {0}.
+        /// </summary>
+        internal static string Market_EstimatedTotal {
+            get {
+                return ResourceManager.GetString("Market_EstimatedTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity:.
+        /// </summary>
+        internal static string Market_Quantity {
+            get {
+                return ResourceManager.GetString("Market_Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search:.
+        /// </summary>
+        internal static string Market_Search {
+            get {
+                return ResourceManager.GetString("Market_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sector:.
+        /// </summary>
+        internal static string Market_Sector {
+            get {
+                return ResourceManager.GetString("Market_Sector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a stock.
+        /// </summary>
+        internal static string Market_SelectStock {
+            get {
+                return ResourceManager.GetString("Market_SelectStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sell.
+        /// </summary>
+        internal static string Market_Sell {
+            get {
+                return ResourceManager.GetString("Market_Sell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add to watchlist.
+        /// </summary>
+        internal static string Market_Watch {
+            get {
+                return ResourceManager.GetString("Market_Watch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} was added to your watchlist..
+        /// </summary>
+        internal static string Market_WatchAdded {
+            get {
+                return ResourceManager.GetString("Market_WatchAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is already on your watchlist..
+        /// </summary>
+        internal static string Market_WatchExists {
+            get {
+                return ResourceManager.GetString("Market_WatchExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;About.
+        /// </summary>
+        internal static string Menu_About {
+            get {
+                return ResourceManager.GetString("Menu_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Dark Theme.
+        /// </summary>
+        internal static string Menu_DarkTheme {
+            get {
+                return ResourceManager.GetString("Menu_DarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E&amp;xit.
+        /// </summary>
+        internal static string Menu_Exit {
+            get {
+                return ResourceManager.GetString("Menu_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;File.
+        /// </summary>
+        internal static string Menu_File {
+            get {
+                return ResourceManager.GetString("Menu_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Glossary.
+        /// </summary>
+        internal static string Menu_Glossary {
+            get {
+                return ResourceManager.GetString("Menu_Glossary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Help.
+        /// </summary>
+        internal static string Menu_Help {
+            get {
+                return ResourceManager.GetString("Menu_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Language.
+        /// </summary>
+        internal static string Menu_Language {
+            get {
+                return ResourceManager.GetString("Menu_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Light Theme.
+        /// </summary>
+        internal static string Menu_LightTheme {
+            get {
+                return ResourceManager.GetString("Menu_LightTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Log Out.
+        /// </summary>
+        internal static string Menu_LogOut {
+            get {
+                return ResourceManager.GetString("Menu_LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Refresh Stocks.
+        /// </summary>
+        internal static string Menu_Refresh {
+            get {
+                return ResourceManager.GetString("Menu_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Settings.
+        /// </summary>
+        internal static string Menu_Settings {
+            get {
+                return ResourceManager.GetString("Menu_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;View.
+        /// </summary>
+        internal static string Menu_View {
+            get {
+                return ResourceManager.GetString("Menu_View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        internal static string Nav_Admin {
+            get {
+                return ResourceManager.GetString("Nav_Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        internal static string Nav_Dashboard {
+            get {
+                return ResourceManager.GetString("Nav_Dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Glossary.
+        /// </summary>
+        internal static string Nav_Glossary {
+            get {
+                return ResourceManager.GetString("Nav_Glossary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        internal static string Nav_History {
+            get {
+                return ResourceManager.GetString("Nav_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holdings.
+        /// </summary>
+        internal static string Nav_Holdings {
+            get {
+                return ResourceManager.GetString("Nav_Holdings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Market.
+        /// </summary>
+        internal static string Nav_Market {
+            get {
+                return ResourceManager.GetString("Nav_Market", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reports.
+        /// </summary>
+        internal static string Nav_Reports {
+            get {
+                return ResourceManager.GetString("Nav_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string Nav_Settings {
+            get {
+                return ResourceManager.GetString("Nav_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watchlist.
+        /// </summary>
+        internal static string Nav_Watchlist {
+            get {
+                return ResourceManager.GetString("Nav_Watchlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        internal static string Reports_Generate {
+            get {
+                return ResourceManager.GetString("Reports_Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portfolio summary.
+        /// </summary>
+        internal static string Reports_Portfolio {
+            get {
+                return ResourceManager.GetString("Reports_Portfolio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit and loss by stock.
+        /// </summary>
+        internal static string Reports_ProfitLoss {
+            get {
+                return ResourceManager.GetString("Reports_ProfitLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sector allocation.
+        /// </summary>
+        internal static string Reports_Sectors {
+            get {
+                return ResourceManager.GetString("Reports_Sectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        internal static string Reports_Total {
+            get {
+                return ResourceManager.GetString("Reports_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report type.
+        /// </summary>
+        internal static string Reports_Type {
+            get {
+                return ResourceManager.GetString("Reports_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        internal static string Settings_ChangePassword {
+            get {
+                return ResourceManager.GetString("Settings_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change username.
+        /// </summary>
+        internal static string Settings_ChangeUsername {
+            get {
+                return ResourceManager.GetString("Settings_ChangeUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        internal static string Settings_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("Settings_ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current password.
+        /// </summary>
+        internal static string Settings_CurrentPassword {
+            get {
+                return ResourceManager.GetString("Settings_CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string Settings_Language {
+            get {
+                return ResourceManager.GetString("Settings_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New password.
+        /// </summary>
+        internal static string Settings_NewPassword {
+            get {
+                return ResourceManager.GetString("Settings_NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New username.
+        /// </summary>
+        internal static string Settings_NewUsername {
+            get {
+                return ResourceManager.GetString("Settings_NewUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has been changed..
+        /// </summary>
+        internal static string Settings_PasswordChanged {
+            get {
+                return ResourceManager.GetString("Settings_PasswordChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preferences.
+        /// </summary>
+        internal static string Settings_Preferences {
+            get {
+                return ResourceManager.GetString("Settings_Preferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        internal static string Settings_Theme {
+            get {
+                return ResourceManager.GetString("Settings_Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your username is now {0}..
+        /// </summary>
+        internal static string Settings_UsernameChanged {
+            get {
+                return ResourceManager.GetString("Settings_UsernameChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash: {0}.
+        /// </summary>
+        internal static string Status_Cash {
+            get {
+                return ResourceManager.GetString("Status_Cash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User: {0}.
+        /// </summary>
+        internal static string Status_User {
+            get {
+                return ResourceManager.GetString("Status_User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bought {0} shares of {1} for {2}..
+        /// </summary>
+        internal static string Trade_Bought {
+            get {
+                return ResourceManager.GetString("Trade_Bought", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity must be at least 1..
+        /// </summary>
+        internal static string Trade_InvalidQuantity {
+            get {
+                return ResourceManager.GetString("Trade_InvalidQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not enough cash. This trade costs {0} and you have {1}..
+        /// </summary>
+        internal static string Trade_NotEnoughCash {
+            get {
+                return ResourceManager.GetString("Trade_NotEnoughCash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You only own {0} shares of {1}..
+        /// </summary>
+        internal static string Trade_NotEnoughShares {
+            get {
+                return ResourceManager.GetString("Trade_NotEnoughShares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The stock or user could not be found..
+        /// </summary>
+        internal static string Trade_NotFound {
+            get {
+                return ResourceManager.GetString("Trade_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sold {0} shares of {1} for {2}..
+        /// </summary>
+        internal static string Trade_Sold {
+            get {
+                return ResourceManager.GetString("Trade_Sold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a positive number, e.g. 10000..
+        /// </summary>
+        internal static string Validation_CashInvalid {
+            get {
+                return ResourceManager.GetString("Validation_CashInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting cash cannot exceed 300000 and must be at least 1000..
+        /// </summary>
+        internal static string Validation_CashRange {
+            get {
+                return ResourceManager.GetString("Validation_CashRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include an uppercase letter, a lowercase letter and a number..
+        /// </summary>
+        internal static string Validation_PasswordComplexity {
+            get {
+                return ResourceManager.GetString("Validation_PasswordComplexity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passwords do not match..
+        /// </summary>
+        internal static string Validation_PasswordMismatch {
+            get {
+                return ResourceManager.GetString("Validation_PasswordMismatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password cannot exceed 128 characters..
+        /// </summary>
+        internal static string Validation_PasswordTooLong {
+            get {
+                return ResourceManager.GetString("Validation_PasswordTooLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at least 8 characters..
+        /// </summary>
+        internal static string Validation_PasswordTooShort {
+            get {
+                return ResourceManager.GetString("Validation_PasswordTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username cannot exceed 50 characters..
+        /// </summary>
+        internal static string Validation_UsernameTooLong {
+            get {
+                return ResourceManager.GetString("Validation_UsernameTooLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username must be at least 4 characters..
+        /// </summary>
+        internal static string Validation_UsernameTooShort {
+            get {
+                return ResourceManager.GetString("Validation_UsernameTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string Watchlist_Remove {
+            get {
+                return ResourceManager.GetString("Watchlist_Remove", resourceCulture);
             }
         }
     }

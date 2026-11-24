@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_Title" xml:space="preserve">
     <value>Error</value>
@@ -430,6 +433,111 @@ Simulated data and virtual money only.</value>
   </data>
   <data name="Glossary_Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="Glossary_NoResults" xml:space="preserve">
+    <value>No terms match your search.</value>
+  </data>
+  <data name="Glossary_Stock_Term" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="Glossary_Stock_Definition" xml:space="preserve">
+    <value>A small piece of ownership in a company. Each stock in the Market has a symbol (like a short nickname), a sector and a price that changes over time.</value>
+  </data>
+  <data name="Glossary_Share_Term" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Glossary_Share_Definition" xml:space="preserve">
+    <value>One unit of a stock. Buying 10 shares means you own 10 units of that company's stock, and your money goes up or down 10 times as much as the price does.</value>
+  </data>
+  <data name="Glossary_Portfolio_Term" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="Glossary_Portfolio_Definition" xml:space="preserve">
+    <value>Everything you own in the app: your cash plus all of your holdings. The Dashboard and the Portfolio report show how it is doing.</value>
+  </data>
+  <data name="Glossary_Holding_Term" xml:space="preserve">
+    <value>Holding</value>
+  </data>
+  <data name="Glossary_Holding_Definition" xml:space="preserve">
+    <value>A stock you currently own, with how many shares you have. When you sell all of your shares, the holding disappears from the Holdings page.</value>
+  </data>
+  <data name="Glossary_AvgCost_Term" xml:space="preserve">
+    <value>Average cost</value>
+  </data>
+  <data name="Glossary_AvgCost_Definition" xml:space="preserve">
+    <value>The average price you paid for each share of a holding. If you buy 10 shares at $10 and 10 more at $20, your average cost is $15. Selling does not change it.</value>
+  </data>
+  <data name="Glossary_MarketValue_Term" xml:space="preserve">
+    <value>Market value</value>
+  </data>
+  <data name="Glossary_MarketValue_Definition" xml:space="preserve">
+    <value>What a holding is worth right now: the number of shares times the current price. It changes every time the price moves.</value>
+  </data>
+  <data name="Glossary_Profit_Term" xml:space="preserve">
+    <value>Profit / loss</value>
+  </data>
+  <data name="Glossary_Profit_Definition" xml:space="preserve">
+    <value>How much money you made or lost. For a holding it is the market value minus what you paid (shares times average cost). Green means a gain, red means a loss.</value>
+  </data>
+  <data name="Glossary_Realized_Term" xml:space="preserve">
+    <value>Realized profit</value>
+  </data>
+  <data name="Glossary_Realized_Definition" xml:space="preserve">
+    <value>Profit or loss you have locked in by selling shares. It is the sell price minus your average cost, times the number of shares sold. It no longer changes with the price.</value>
+  </data>
+  <data name="Glossary_Unrealized_Term" xml:space="preserve">
+    <value>Unrealized profit</value>
+  </data>
+  <data name="Glossary_Unrealized_Definition" xml:space="preserve">
+    <value>Profit or loss on shares you still own. It is only "on paper": it keeps changing with the price until you sell.</value>
+  </data>
+  <data name="Glossary_Sector_Term" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="Glossary_Sector_Definition" xml:space="preserve">
+    <value>The part of the economy a company belongs to, like Technology, Energy or Health. You can filter the Market by sector, and the Sectors report shows how your money is spread across them.</value>
+  </data>
+  <data name="Glossary_Volatility_Term" xml:space="preserve">
+    <value>Volatility</value>
+  </data>
+  <data name="Glossary_Volatility_Definition" xml:space="preserve">
+    <value>How much a stock's price tends to jump around. A highly volatile stock can rise or fall a lot in a short time; a low volatility stock moves slowly. More volatility means more risk, but also more chance of a big gain.</value>
+  </data>
+  <data name="Glossary_Dividend_Term" xml:space="preserve">
+    <value>Dividend</value>
+  </data>
+  <data name="Glossary_Dividend_Definition" xml:space="preserve">
+    <value>Money a company pays to the people who own its shares, usually a few times a year. You receive it as cash just for holding the stock.</value>
+  </data>
+  <data name="Glossary_DividendYield_Term" xml:space="preserve">
+    <value>Dividend yield</value>
+  </data>
+  <data name="Glossary_DividendYield_Definition" xml:space="preserve">
+    <value>How much a stock pays in dividends each year, as a percentage of its price. A $100 stock with a 3% yield pays about $3 per share per year.</value>
+  </data>
+  <data name="Glossary_Watchlist_Term" xml:space="preserve">
+    <value>Watchlist</value>
+  </data>
+  <data name="Glossary_Watchlist_Definition" xml:space="preserve">
+    <value>A list of stocks you want to keep an eye on without buying them. Add a stock from the Market page and follow its price on the Watchlist page.</value>
+  </data>
+  <data name="Glossary_Buy_Term" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="Glossary_Buy_Definition" xml:space="preserve">
+    <value>Spending cash to get shares of a stock at its current price. You need enough cash to pay for all the shares at once.</value>
+  </data>
+  <data name="Glossary_Sell_Term" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="Glossary_Sell_Definition" xml:space="preserve">
+    <value>Trading shares of a stock back for cash at its current price. You can only sell shares you own. Selling turns unrealized profit into realized profit.</value>
+  </data>
+  <data name="Glossary_Diversification_Term" xml:space="preserve">
+    <value>Diversification</value>
+  </data>
+  <data name="Glossary_Diversification_Definition" xml:space="preserve">
+    <value>Spreading your money across many stocks and sectors instead of putting it all in one. If one stock falls, the others can soften the loss.</value>
   </data>
   <data name="Admin_ResetCash" xml:space="preserve">
     <value>Reset account</value>

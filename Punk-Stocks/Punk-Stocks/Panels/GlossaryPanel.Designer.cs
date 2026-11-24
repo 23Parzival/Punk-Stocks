@@ -126,8 +126,10 @@ namespace Punk_Stocks.Panels
             // termsListBox
             // 
             this.termsListBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.termsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.termsListBox.FormattingEnabled = true;
             this.termsListBox.IntegralHeight = false;
+            this.termsListBox.ItemHeight = 18;
             this.termsListBox.Location = new System.Drawing.Point(15, 0);
             this.termsListBox.Name = "termsListBox";
             this.termsListBox.Size = new System.Drawing.Size(250, 534);

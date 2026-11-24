@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_Title" xml:space="preserve">
     <value>Erreur</value>
@@ -430,6 +433,111 @@ Données simulées et argent virtuel seulement.</value>
   </data>
   <data name="Glossary_Search" xml:space="preserve">
     <value>Rechercher</value>
+  </data>
+  <data name="Glossary_NoResults" xml:space="preserve">
+    <value>Aucun terme ne correspond à votre recherche.</value>
+  </data>
+  <data name="Glossary_Stock_Term" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Glossary_Stock_Definition" xml:space="preserve">
+    <value>Une petite part de propriété dans une entreprise. Chaque action du Marché a un symbole (un court surnom), un secteur et un prix qui change avec le temps.</value>
+  </data>
+  <data name="Glossary_Share_Term" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="Glossary_Share_Definition" xml:space="preserve">
+    <value>Une unité d'une action. Acheter 10 parts veut dire que vous possédez 10 unités de l'action de cette entreprise, et votre argent monte ou baisse 10 fois plus que le prix.</value>
+  </data>
+  <data name="Glossary_Portfolio_Term" xml:space="preserve">
+    <value>Portefeuille</value>
+  </data>
+  <data name="Glossary_Portfolio_Definition" xml:space="preserve">
+    <value>Tout ce que vous possédez dans l'application : votre argent plus tous vos placements. Le tableau de bord et le rapport Portefeuille montrent comment il se porte.</value>
+  </data>
+  <data name="Glossary_Holding_Term" xml:space="preserve">
+    <value>Placement</value>
+  </data>
+  <data name="Glossary_Holding_Definition" xml:space="preserve">
+    <value>Une action que vous possédez en ce moment, avec le nombre de parts que vous avez. Quand vous vendez toutes vos parts, le placement disparaît de la page Placements.</value>
+  </data>
+  <data name="Glossary_AvgCost_Term" xml:space="preserve">
+    <value>Coût moyen</value>
+  </data>
+  <data name="Glossary_AvgCost_Definition" xml:space="preserve">
+    <value>Le prix moyen que vous avez payé pour chaque part d'un placement. Si vous achetez 10 parts à 10 $ puis 10 autres à 20 $, votre coût moyen est de 15 $. Vendre ne le change pas.</value>
+  </data>
+  <data name="Glossary_MarketValue_Term" xml:space="preserve">
+    <value>Valeur marchande</value>
+  </data>
+  <data name="Glossary_MarketValue_Definition" xml:space="preserve">
+    <value>Ce que vaut un placement en ce moment : le nombre de parts multiplié par le prix actuel. Elle change chaque fois que le prix bouge.</value>
+  </data>
+  <data name="Glossary_Profit_Term" xml:space="preserve">
+    <value>Gain / perte</value>
+  </data>
+  <data name="Glossary_Profit_Definition" xml:space="preserve">
+    <value>L'argent que vous avez gagné ou perdu. Pour un placement, c'est la valeur marchande moins ce que vous avez payé (parts multipliées par le coût moyen). Le vert indique un gain, le rouge une perte.</value>
+  </data>
+  <data name="Glossary_Realized_Term" xml:space="preserve">
+    <value>Gain réalisé</value>
+  </data>
+  <data name="Glossary_Realized_Definition" xml:space="preserve">
+    <value>Le gain ou la perte que vous avez fixé en vendant des parts. C'est le prix de vente moins votre coût moyen, multiplié par le nombre de parts vendues. Il ne change plus avec le prix.</value>
+  </data>
+  <data name="Glossary_Unrealized_Term" xml:space="preserve">
+    <value>Gain non réalisé</value>
+  </data>
+  <data name="Glossary_Unrealized_Definition" xml:space="preserve">
+    <value>Le gain ou la perte sur les parts que vous possédez encore. Il n'existe que « sur papier » : il change avec le prix jusqu'à ce que vous vendiez.</value>
+  </data>
+  <data name="Glossary_Sector_Term" xml:space="preserve">
+    <value>Secteur</value>
+  </data>
+  <data name="Glossary_Sector_Definition" xml:space="preserve">
+    <value>La partie de l'économie à laquelle appartient une entreprise, comme la Technologie, l'Énergie ou la Santé. Vous pouvez filtrer le Marché par secteur, et le rapport Secteurs montre comment votre argent y est réparti.</value>
+  </data>
+  <data name="Glossary_Volatility_Term" xml:space="preserve">
+    <value>Volatilité</value>
+  </data>
+  <data name="Glossary_Volatility_Definition" xml:space="preserve">
+    <value>À quel point le prix d'une action a tendance à bouger. Une action très volatile peut monter ou baisser beaucoup en peu de temps; une action peu volatile bouge lentement. Plus de volatilité veut dire plus de risque, mais aussi plus de chances d'un gros gain.</value>
+  </data>
+  <data name="Glossary_Dividend_Term" xml:space="preserve">
+    <value>Dividende</value>
+  </data>
+  <data name="Glossary_Dividend_Definition" xml:space="preserve">
+    <value>L'argent qu'une entreprise verse aux personnes qui possèdent ses parts, souvent quelques fois par année. Vous le recevez en argent simplement en gardant l'action.</value>
+  </data>
+  <data name="Glossary_DividendYield_Term" xml:space="preserve">
+    <value>Rendement du dividende</value>
+  </data>
+  <data name="Glossary_DividendYield_Definition" xml:space="preserve">
+    <value>Combien une action verse en dividendes chaque année, en pourcentage de son prix. Une action à 100 $ avec un rendement de 3 % verse environ 3 $ par part par année.</value>
+  </data>
+  <data name="Glossary_Watchlist_Term" xml:space="preserve">
+    <value>Liste de suivi</value>
+  </data>
+  <data name="Glossary_Watchlist_Definition" xml:space="preserve">
+    <value>Une liste d'actions que vous voulez surveiller sans les acheter. Ajoutez une action depuis la page Marché et suivez son prix sur la page Liste de suivi.</value>
+  </data>
+  <data name="Glossary_Buy_Term" xml:space="preserve">
+    <value>Acheter</value>
+  </data>
+  <data name="Glossary_Buy_Definition" xml:space="preserve">
+    <value>Dépenser de l'argent pour obtenir des parts d'une action au prix actuel. Vous devez avoir assez d'argent pour payer toutes les parts d'un coup.</value>
+  </data>
+  <data name="Glossary_Sell_Term" xml:space="preserve">
+    <value>Vendre</value>
+  </data>
+  <data name="Glossary_Sell_Definition" xml:space="preserve">
+    <value>Céder des parts d'une action contre de l'argent au prix actuel. Vous ne pouvez vendre que les parts que vous possédez. Vendre transforme un gain non réalisé en gain réalisé.</value>
+  </data>
+  <data name="Glossary_Diversification_Term" xml:space="preserve">
+    <value>Diversification</value>
+  </data>
+  <data name="Glossary_Diversification_Definition" xml:space="preserve">
+    <value>Répartir votre argent entre plusieurs actions et secteurs au lieu de tout mettre dans une seule. Si une action baisse, les autres peuvent adoucir la perte.</value>
   </data>
   <data name="Admin_ResetCash" xml:space="preserve">
     <value>Réinitialiser le compte</value>
