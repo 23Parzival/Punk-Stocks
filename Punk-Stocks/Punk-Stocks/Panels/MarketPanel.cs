@@ -1,3 +1,4 @@
+using Punk_Stocks.Forms;
 using Punk_Stocks.Models.Enums;
 using Punk_Stocks.Repositories;
 using Punk_Stocks.Services;
@@ -13,6 +14,7 @@ namespace Punk_Stocks.Panels
     {
         private readonly StockRepository stockRepository = new StockRepository();
         private readonly WatchlistRepository watchlistRepository = new WatchlistRepository();
+        private readonly AlertRepository alertRepository = new AlertRepository();
         private readonly TradeService tradeService = new TradeService();
 
         private List<Stock> stocks = new List<Stock>();
@@ -35,6 +37,7 @@ namespace Punk_Stocks.Panels
             buyButton.Text = LanguageManager.Get("Market_Buy");
             sellButton.Text = LanguageManager.Get("Market_Sell");
             watchButton.Text = LanguageManager.Get("Market_Watch");
+            alertButton.Text = LanguageManager.Get("Market_AddAlert");
 
             idColumn.HeaderText = LanguageManager.Get("Column_ID");
             symbolColumn.HeaderText = LanguageManager.Get("Column_Symbol");
@@ -147,6 +150,7 @@ namespace Punk_Stocks.Panels
             buyButton.Enabled = hasStock && hasQuantity;
             sellButton.Enabled = hasStock && hasQuantity;
             watchButton.Enabled = hasStock;
+            alertButton.Enabled = hasStock;
 
             if (!hasStock)
             {
@@ -255,6 +259,42 @@ namespace Punk_Stocks.Panels
 
             string message = LanguageManager.Format(added ? "Market_WatchAdded" : "Market_WatchExists", stock.Symbol);
             MessageBox.Show(message, LanguageManager.Get("Nav_Watchlist"),MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private async void alertButton_Click(object sender, EventArgs e)
+        {
+            Stock stock = SelectedStock();
+            User user = SessionManager.CurrentUser;
+            if (stock == null || user == null)
+                return;
+
+            Alert alert;
+            using (var form = new AlertForm(stock))
+            {
+                if (form.ShowDialog(this) != DialogResult.OK)
+                    return;
+
+                alert = new Alert
+                {
+                    UserID = user.UserID,
+                    StockID = stock.StockID,
+                    TargetPrice = form.TargetPrice,
+                    Direction = (int)form.Direction,
+                    IsTriggered = false
+                };
+            }
+
+            try
+            {
+                await Task.Run(() => alertRepository.Add(alert));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(LanguageManager.Get("Error_Save") + "\n" + ex.Message, LanguageManager.Get("Error_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show(LanguageManager.Format("Market_AlertAdded", stock.Symbol), LanguageManager.Get("Market_AddAlert"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

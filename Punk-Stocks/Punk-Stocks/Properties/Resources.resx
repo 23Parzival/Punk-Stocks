@@ -365,6 +365,66 @@ Simulated data and virtual money only.</value>
   <data name="History_Dividend" xml:space="preserve">
     <value>Dividend</value>
   </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Market_AddAlert" xml:space="preserve">
+    <value>Add alert</value>
+  </data>
+  <data name="Market_AlertAdded" xml:space="preserve">
+    <value>Alert added for {0}. You can see it on the Watchlist page.</value>
+  </data>
+  <data name="Watchlist_Alerts" xml:space="preserve">
+    <value>Price alerts</value>
+  </data>
+  <data name="Watchlist_RemoveAlert" xml:space="preserve">
+    <value>Remove alert</value>
+  </data>
+  <data name="Column_Condition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="Column_Target" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="Column_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Alert_Title" xml:space="preserve">
+    <value>Price alert</value>
+  </data>
+  <data name="Alert_Prompt" xml:space="preserve">
+    <value>Alert me when {0} goes:</value>
+  </data>
+  <data name="Alert_CurrentPrice" xml:space="preserve">
+    <value>Current price: {0}</value>
+  </data>
+  <data name="Alert_Above" xml:space="preserve">
+    <value>Above</value>
+  </data>
+  <data name="Alert_Below" xml:space="preserve">
+    <value>Below</value>
+  </data>
+  <data name="Alert_Waiting" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="Alert_Triggered" xml:space="preserve">
+    <value>Triggered</value>
+  </data>
+  <data name="Alert_AlreadyAbove" xml:space="preserve">
+    <value>{0} is already at or above {1}.</value>
+  </data>
+  <data name="Alert_AlreadyBelow" xml:space="preserve">
+    <value>{0} is already at or below {1}.</value>
+  </data>
+  <data name="Alert_WentAbove" xml:space="preserve">
+    <value>{0} went above {1} (now {2})</value>
+  </data>
+  <data name="Alert_WentBelow" xml:space="preserve">
+    <value>{0} went below {1} (now {2})</value>
+  </data>
   <data name="Market_Watch" xml:space="preserve">
     <value>Add to watchlist</value>
   </data>

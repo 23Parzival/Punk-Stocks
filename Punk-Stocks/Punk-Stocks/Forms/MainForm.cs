@@ -5,6 +5,7 @@ using Punk_Stocks.Services;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace Punk_Stocks.Forms
 
         private readonly UserRepository userRepository = new UserRepository();
         private readonly PriceSimulator priceSimulator = new PriceSimulator();
+        private readonly AlertService alertService = new AlertService();
         private readonly Dictionary<Button, UserControl> panels = new Dictionary<Button, UserControl>();
 
         private Button activeButton;
@@ -133,11 +135,13 @@ namespace Punk_Stocks.Forms
         private async void StartPriceSimulation()
         {
             simulating = true;
+            List<Alert> triggered = null;
             try
             {
                 bool dividendsPaid = await Task.Run(() => priceSimulator.CatchUp());
                 if (dividendsPaid)
                     await ReloadCash();
+                triggered = await CheckAlerts();
                 RefreshActivePanel();
             }
             catch (Exception ex)
@@ -151,6 +155,7 @@ namespace Punk_Stocks.Forms
 
             priceTimer.Interval = (int)PriceSimulator.TickInterval.TotalMilliseconds;
             priceTimer.Start();
+            ShowTriggeredAlerts(triggered);
         }
 
         private async void priceTimer_Tick(object sender, EventArgs e)
@@ -159,11 +164,13 @@ namespace Punk_Stocks.Forms
                 return;
 
             simulating = true;
+            List<Alert> triggered = null;
             try
             {
                 bool dividendsPaid = await Task.Run(() => priceSimulator.Tick());
                 if (dividendsPaid)
                     await ReloadCash();
+                triggered = await CheckAlerts();
                 RefreshActivePanel();
             }
             catch (Exception)
@@ -174,6 +181,28 @@ namespace Punk_Stocks.Forms
             {
                 simulating = false;
             }
+
+            //shown after simulating is false, so prices keep moving while the message is open
+            ShowTriggeredAlerts(triggered);
+        }
+
+        private async Task<List<Alert>> CheckAlerts()
+        {
+            User user = SessionManager.CurrentUser;
+            if (user == null)
+                return null;
+
+            return await Task.Run(() => alertService.Check(user.UserID));
+        }
+
+        //one message for every alert that went off at the same time
+        private void ShowTriggeredAlerts(List<Alert> triggered)
+        {
+            if (triggered == null || triggered.Count == 0)
+                return;
+
+            string message = string.Join("\n", triggered.Select(AlertService.Describe));
+            MessageBox.Show(message, LanguageManager.Get("Alert_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private async Task ReloadCash()

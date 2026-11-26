@@ -365,6 +365,66 @@ Données simulées et argent virtuel seulement.</value>
   <data name="History_Dividend" xml:space="preserve">
     <value>Dividende</value>
   </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Market_AddAlert" xml:space="preserve">
+    <value>Ajouter une alerte</value>
+  </data>
+  <data name="Market_AlertAdded" xml:space="preserve">
+    <value>Alerte ajoutée pour {0}. Vous pouvez la voir sur la page Liste de suivi.</value>
+  </data>
+  <data name="Watchlist_Alerts" xml:space="preserve">
+    <value>Alertes de prix</value>
+  </data>
+  <data name="Watchlist_RemoveAlert" xml:space="preserve">
+    <value>Retirer l'alerte</value>
+  </data>
+  <data name="Column_Condition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="Column_Target" xml:space="preserve">
+    <value>Cible</value>
+  </data>
+  <data name="Column_Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="Alert_Title" xml:space="preserve">
+    <value>Alerte de prix</value>
+  </data>
+  <data name="Alert_Prompt" xml:space="preserve">
+    <value>M'avertir quand {0} passe :</value>
+  </data>
+  <data name="Alert_CurrentPrice" xml:space="preserve">
+    <value>Prix actuel : {0}</value>
+  </data>
+  <data name="Alert_Above" xml:space="preserve">
+    <value>Au-dessus de</value>
+  </data>
+  <data name="Alert_Below" xml:space="preserve">
+    <value>En dessous de</value>
+  </data>
+  <data name="Alert_Waiting" xml:space="preserve">
+    <value>En attente</value>
+  </data>
+  <data name="Alert_Triggered" xml:space="preserve">
+    <value>Déclenchée</value>
+  </data>
+  <data name="Alert_AlreadyAbove" xml:space="preserve">
+    <value>{0} est déjà à {1} ou plus.</value>
+  </data>
+  <data name="Alert_AlreadyBelow" xml:space="preserve">
+    <value>{0} est déjà à {1} ou moins.</value>
+  </data>
+  <data name="Alert_WentAbove" xml:space="preserve">
+    <value>{0} a dépassé {1} (maintenant {2})</value>
+  </data>
+  <data name="Alert_WentBelow" xml:space="preserve">
+    <value>{0} est passé sous {1} (maintenant {2})</value>
+  </data>
   <data name="Market_Watch" xml:space="preserve">
     <value>Ajouter à la liste de suivi</value>
   </data>

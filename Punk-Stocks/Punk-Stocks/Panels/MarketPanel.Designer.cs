@@ -53,6 +53,7 @@ namespace Punk_Stocks.Panels
             this.buyButton = new System.Windows.Forms.Button();
             this.sellButton = new System.Windows.Forms.Button();
             this.watchButton = new System.Windows.Forms.Button();
+            this.alertButton = new System.Windows.Forms.Button();
             this.estimateLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.stockNameLabel = new System.Windows.Forms.Label();
@@ -226,6 +227,7 @@ namespace Punk_Stocks.Panels
             this.tradeFlowPanel.Controls.Add(this.buyButton);
             this.tradeFlowPanel.Controls.Add(this.sellButton);
             this.tradeFlowPanel.Controls.Add(this.watchButton);
+            this.tradeFlowPanel.Controls.Add(this.alertButton);
             this.tradeFlowPanel.Controls.Add(this.estimateLabel);
             this.tradeFlowPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tradeFlowPanel.Location = new System.Drawing.Point(15, 85);
@@ -301,15 +303,29 @@ namespace Punk_Stocks.Panels
             this.watchButton.Text = "Add to watchlist";
             this.watchButton.UseVisualStyleBackColor = true;
             this.watchButton.Click += new System.EventHandler(this.watchButton_Click);
-            // 
+            //
+            // alertButton
+            //
+            this.alertButton.AutoSize = true;
+            this.alertButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.alertButton.Location = new System.Drawing.Point(504, 3);
+            this.alertButton.MinimumSize = new System.Drawing.Size(130, 32);
+            this.alertButton.Name = "alertButton";
+            this.alertButton.Size = new System.Drawing.Size(130, 32);
+            this.alertButton.TabIndex = 5;
+            this.alertButton.Text = "Add alert";
+            this.alertButton.UseVisualStyleBackColor = true;
+            this.alertButton.Click += new System.EventHandler(this.alertButton_Click);
+            //
             // estimateLabel
-            // 
+            //
             this.estimateLabel.AutoSize = true;
-            this.estimateLabel.Location = new System.Drawing.Point(516, 12);
+            this.estimateLabel.Location = new System.Drawing.Point(652, 12);
             this.estimateLabel.Margin = new System.Windows.Forms.Padding(15, 12, 3, 0);
             this.estimateLabel.Name = "estimateLabel";
             this.estimateLabel.Size = new System.Drawing.Size(0, 13);
-            this.estimateLabel.TabIndex = 5;
+            this.estimateLabel.TabIndex = 6;
             // 
             // descriptionLabel
             // 
@@ -376,6 +392,7 @@ namespace Punk_Stocks.Panels
         private System.Windows.Forms.Button buyButton;
         private System.Windows.Forms.Button sellButton;
         private System.Windows.Forms.Button watchButton;
+        private System.Windows.Forms.Button alertButton;
         private System.Windows.Forms.Label estimateLabel;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Label stockNameLabel;
